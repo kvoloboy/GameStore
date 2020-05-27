@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+            
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="MyOrders" xml:space="preserve">
+        <value>Мои заказы</value>
+    </data>
+    <data name="SignOut" xml:space="preserve">
+        <value>Выйти</value>
+    </data>
+    <data name="Register" xml:space="preserve">
+        <value>Зарегистрироваться</value>
+    </data>
+    <data name="SignIn" xml:space="preserve">
+        <value>Войти</value>
+    </data>
+    <data name="HomeButton" xml:space="preserve">
+        <value>Домой</value>
+    </data>
+    <data name="logo" xml:space="preserve">
+        <value>logo</value>
+    </data>
+    <data name="Games" xml:space="preserve">
+        <value>Игры</value>
+    </data>
+    <data name="Genres" xml:space="preserve">
+        <value>Жанры</value>
+    </data>
+    <data name="Publishers" xml:space="preserve">
+        <value>Производители</value>
+    </data>
+    <data name="Orders" xml:space="preserve">
+        <value>Заказы</value>
+    </data>
+    <data name="History" xml:space="preserve">
+        <value>История</value>
+        <comment>History</comment>
+    </data>
+    <data name="Orders management" xml:space="preserve">
+        <value>Управление заказами</value>
+    </data>
+    <data name="Cart" xml:space="preserve">
+        <value>Корзина</value>
+    </data>
+    <data name="Users" xml:space="preserve">
+        <value>Пользователи</value>
+    </data>
+    <data name="Roles" xml:space="preserve">
+        <value>Роли</value>
+    </data>
+    <data name="Copyright" xml:space="preserve">
+        <value>@2007 - 2019 Все Права Защищены</value>
+    </data>
+    <data name="Social Media" xml:space="preserve">
+        <value>Социальные сети</value>
+    </data>
+    <data name="Headline" xml:space="preserve">
+        <value>Что может сделать вашу жизнь проще?</value>
+    </data>
+    <data name="Headline bottom" xml:space="preserve">
+        <value>Усиленные решения с простым процессом</value>
+    </data>
+    <data name="Get In Touch" xml:space="preserve">
+        <value>Оставайтесь на связи</value>
+    </data>
+    <data name="Reply date" xml:space="preserve">
+        <value>Около часа назад ответ</value>
+    </data>
+    <data name="Follow Us" xml:space="preserve">
+        <value>Подписывайтесь на нас</value>
+        <comment>Follow Us</comment>
+    </data>
+    <data name="Twitter Updates" xml:space="preserve">
+        <value>Обновления твиттера</value>
+    </data>
+    <data name="Submit" xml:space="preserve">
+        <value>Отправить</value>
+    </data>
+    <data name="Message" xml:space="preserve">
+        <value>Сообщение</value>
+    </data>
+    <data name="Email" xml:space="preserve">
+        <value>Почта</value>
+    </data>
+    <data name="Name" xml:space="preserve">
+        <value>Имя</value>
+    </data>
+    <data name="From the Blog" xml:space="preserve">
+        <value>Из блога</value>
+    </data>
+    <data name="Post text" xml:space="preserve">
+        <value>Микроволновые члены удобства дуги по уик-энда. Нет долины.</value>
+    </data>
+    <data name="Learn more" xml:space="preserve">
+        <value>Подробнее</value>
+    </data>
+    <data name="Visit Blog" xml:space="preserve">
+        <value>Посетите блог</value>
+    </data>
+    <data name="Site links" xml:space="preserve">
+        <value>Ссыдки сайта</value>
+    </data>
+    <data name="My Bucket" xml:space="preserve">
+        <value>Моя корзина</value>
+    </data>
+    <data name="Company information" xml:space="preserve">
+        <value>Информация о компании</value>
+    </data>
+    <data name="About" xml:space="preserve">
+        <value>О нас</value>
+    </data>
+    <data name="Awards" xml:space="preserve">
+        <value>Награды</value>
+    </data>
+    <data name="Reviews" xml:space="preserve">
+        <value>Обзоры</value>
+    </data>
+    <data name="Testimonials" xml:space="preserve">
+        <value>Отзывы</value>
+    </data>
+    <data name="Contact" xml:space="preserve">
+        <value>Контакты</value>
+    </data>
+    <data name="Personal" xml:space="preserve">
+        <value>Личный кабинет</value>
+    </data>
+</root>

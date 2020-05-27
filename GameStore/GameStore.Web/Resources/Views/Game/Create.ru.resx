@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+            
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="Title" xml:space="preserve">
+        <value>Создать игру</value>
+    </data>
+    <data name="Key" xml:space="preserve">
+        <value>Ключ</value>
+    </data>
+    <data name="Name" xml:space="preserve">
+        <value>Название</value>
+    </data>
+    <data name="UnitsInStock" xml:space="preserve">
+        <value>Количество в наличии</value>
+    </data>
+    <data name="UnitsInStockMessage" xml:space="preserve">
+        <value>Оставьте поле пустым если количество бесконечно</value>
+    </data>
+    <data name="Price" xml:space="preserve">
+        <value>Цена</value>
+    </data>
+    <data name="Discount" xml:space="preserve">
+        <value>Скидка</value>
+    </data>
+    <data name="UnitsOnOrder" xml:space="preserve">
+        <value>Количество в заказе</value>
+    </data>
+    <data name="QuantityPerUnit" xml:space="preserve">
+        <value>Количество в позиции</value>
+    </data>
+    <data name="Publishers" xml:space="preserve">
+        <value>Издатели</value>
+    </data>
+    <data name="Description" xml:space="preserve">
+        <value>Описание</value>
+    </data>
+    <data name="None" xml:space="preserve">
+        <value>Неизвестно</value>
+    </data>
+    <data name="SelectGenres" xml:space="preserve">
+        <value>Выберите жанры</value>
+        <comment>SelectGenres</comment>
+    </data>
+    <data name="SelectPlatforms" xml:space="preserve">
+        <value>Выберите платформы</value>
+    </data>
+    <data name="CreateButton" xml:space="preserve">
+        <value>Создать</value>
+    </data>
+    <data name="Enter here localizable details" xml:space="preserve">
+        <value>Введите в эти поля локализируемые значения</value>
+    </data>
+    <data name="RussianCulture" xml:space="preserve">
+        <value>Русский</value>
+    </data>
+    <data name="EnglishCulture" xml:space="preserve">
+        <value>Английский</value>
+    </data>
+</root>

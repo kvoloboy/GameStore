@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+            
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="Search" xml:space="preserve">
+        <value>Enter name here</value>
+    </data>
+    <data name="SearchLabel" xml:space="preserve">
+        <value>at least 3 symbols</value>
+    </data>
+    <data name="SelectPageSize" xml:space="preserve">
+        <value>Select page size</value>
+    </data>
+    <data name="Sort" xml:space="preserve">
+        <value>Sort</value>
+    </data>
+    <data name="Genres" xml:space="preserve">
+        <value>Genres</value>
+    </data>
+    <data name="Platforms" xml:space="preserve">
+        <value>Platforms</value>
+    </data>
+    <data name="From" xml:space="preserve">
+        <value>From</value>
+    </data>
+    <data name="To" xml:space="preserve">
+        <value>To</value>
+    </data>
+    <data name="Publishers" xml:space="preserve">
+        <value>Publishers</value>
+    </data>
+    <data name="WasPublished" xml:space="preserve">
+        <value>Was published</value>
+    </data>
+    <data name="FilterButton" xml:space="preserve">
+        <value>Filter</value>
+    </data>
+    <data name="Sorting" xml:space="preserve">
+        <value>Sorting</value>
+    </data>
+    <data name="Price Range" xml:space="preserve">
+        <value>Price Range</value>
+    </data>
+    <data name="Publisher" xml:space="preserve">
+        <value>Publisher</value>
+    </data>
+    <data name="Release Date" xml:space="preserve">
+        <value>Release Date</value>
+    </data>
+    <data name="Genre" xml:space="preserve">
+        <value>Genre</value>
+    </data>
+    <data name="Platform" xml:space="preserve">
+        <value>Platform</value>
+    </data>
+    <data name="Page size" xml:space="preserve">
+        <value>Page size</value>
+    </data>
+    <data name="None" xml:space="preserve">
+        <value>None</value>
+    </data>
+</root>

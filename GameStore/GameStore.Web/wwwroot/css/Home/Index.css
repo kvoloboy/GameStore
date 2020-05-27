@@ -1,0 +1,42 @@
+﻿.intro {
+    color: #3E4554;
+    display: flex;
+    justify-content: space-between;
+}
+
+.intro-left {
+    min-height: 100%;
+    width: 55vw;
+}
+
+.intro-header {
+    font-size: 28px;
+    line-height: 34px;
+    margin-bottom: 2vh;
+}
+
+.intro-right {
+    min-height: 100%;
+}
+
+.img-container {
+    position: relative;
+}
+
+.image-text {
+    color: #fff;
+    position: relative;
+}
+
+.image-text > h2 {
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
+    font-size: 24px;
+    line-height: 22px;
+}
+
+.arrow {
+    margin-left: 12px;
+    vertical-align: unset;
+}

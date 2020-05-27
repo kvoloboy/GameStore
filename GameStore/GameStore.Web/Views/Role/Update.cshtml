@@ -1,0 +1,19 @@
+﻿@model ModifyRoleViewModel
+@inject IViewLocalizer Localizer
+
+@{
+    ViewBag.Title = Localizer["Title"];
+}
+
+<form asp-action="UpdateAsync">
+    <div asp-validation-summary="ModelOnly"></div>
+    <input type="hidden" asp-for="Id">
+    <div class="form-group">
+        <label asp-for="Name">@Localizer["Name"]</label>
+        <input asp-for="Name" class="form-control">
+    </div>
+    @Html.CheckBoxList(Model.Permissions, Model.SelectedPermissions, nameof(ModifyRoleViewModel.SelectedPermissions), "permissions")
+    <button type="submit" class="btn btn-primary">
+        @Localizer["UpdateButton"]
+    </button>
+</form>

@@ -1,0 +1,119 @@
+﻿@model ModifyPublisherViewModel
+@inject IViewLocalizer Localizer
+
+@{
+    ViewBag.Title = Localizer["Title"];
+}
+<div>
+    <form asp-action="CreateAsync" method="post">
+        <div asp-validation-summary="ModelOnly"></div>
+        <div class="form-group">
+            <label asp-for="CompanyName">@Localizer["CompanyName"]</label>
+            <input asp-for="CompanyName" class="form-control">
+            <span asp-validation-for="CompanyName"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="HomePage">@Localizer["HomePage"]</label>
+            <input asp-for="HomePage" class="form-control">
+            <span asp-validation-for="HomePage"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="PostalCode">@Localizer["PostalCode"]</label>
+            <input asp-for="PostalCode" class="form-control">
+        </div>
+        <div class="form-group">
+            <label asp-for="Phone">@Localizer["Phone"]</label>
+            <input asp-for="Phone" class="form-control">
+        </div>
+        <div class="form-group">
+            <label asp-for="Fax">@Localizer["Fax"]</label>
+            <input asp-for="Fax" class="form-control">
+        </div>
+
+        <h4 class="m-3">@Localizer["Enter here localizable details"]</h4>
+
+        <nav>
+            <div class="nav nav-tabs" role="tablist">
+                <a class="nav-item nav-link active" data-toggle="tab" href="#english-localization" role="tab" aria-controls="english-localization" aria-selected="true">
+                    @Localizer["EnglishCulture"]
+                </a>
+                <a class="nav-item nav-link" data-toggle="tab" href="#russian-localization" role="tab" aria-controls="russian-localization" aria-selected="false">
+                    @Localizer["RussianCulture"]
+                </a>
+            </div>
+        </nav>
+        <div class="tab-content">
+            <div class="tab-pane fade show active" id="english-localization" role="tabpanel">
+                <div class="form-group">
+                    <label asp-for="@(Model.ContactName)">@Localizer["ContactName"]</label>
+                    <input asp-for="@(Model.ContactName)" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label asp-for="@(Model.ContactTitle)">@Localizer["ContactTitle"]</label>
+                    <input asp-for="@(Model.ContactTitle)" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label asp-for="@(Model.Address)">@Localizer["Address"]</label>
+                    <input asp-for="@(Model.Address)" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label asp-for="@(Model.City)">@Localizer["City"]</label>
+                    <input asp-for="@(Model.ContactName)" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label asp-for="@(Model.Region)">@Localizer["Region"]</label>
+                    <input asp-for="@(Model.Region)" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label asp-for="@(Model.Country)">@Localizer["Country"]</label>
+                    <input asp-for="@(Model.Country)" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label asp-for="@(Model.Description)">@Localizer["Description"]</label>
+                    <input asp-for="@(Model.Description)" class="form-control">
+                </div>
+            </div>
+            <div class="tab-pane fade show" id="russian-localization" role="tabpanel">
+                <input type="hidden" asp-for="@(Model.PublisherLocalization.CultureName)" value="@Culture.Ru">
+                <div class="form-group">
+                    <label asp-for="@(Model.PublisherLocalization.ContactName)">@Localizer["ContactName"]</label>
+                    <input asp-for="@(Model.PublisherLocalization.ContactName)" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label asp-for="@(Model.PublisherLocalization.ContactTitle)">@Localizer["ContactTitle"]</label>
+                    <input asp-for="@(Model.PublisherLocalization.ContactTitle)" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label asp-for="@(Model.PublisherLocalization.Address)">@Localizer["Address"]</label>
+                    <input asp-for="@(Model.PublisherLocalization.Address)" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label asp-for="@(Model.PublisherLocalization.City)">@Localizer["City"]</label>
+                    <input asp-for="@(Model.PublisherLocalization.City)" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label asp-for="@(Model.PublisherLocalization.Region)">@Localizer["Region"]</label>
+                    <input asp-for="@(Model.PublisherLocalization.Region)" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label asp-for="@(Model.PublisherLocalization.Country)">@Localizer["Country"]</label>
+                    <input asp-for="@(Model.PublisherLocalization.Country)" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label asp-for="@(Model.PublisherLocalization.Description)">@Localizer["Description"]</label>
+                    <input asp-for="@(Model.PublisherLocalization.Description)" class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-lg btn-outline-primary">@Localizer["CreateButton"]</button>
+        </div>
+    </form>
+</div>
+
+@section Scripts
+{
+    <script src="~/lib/jquery/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/lib/popper.js/popper.min.js"></script>
+}

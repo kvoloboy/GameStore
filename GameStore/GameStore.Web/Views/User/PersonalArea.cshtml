@@ -1,0 +1,10 @@
+﻿@inject IViewLocalizer Localizer
+<a class="btn btn-link d-block" asp-action="GetForUserAsync" asp-controller="Order">
+    @Localizer["Orders"]
+</a>
+@if (User.IsAllowedPermission(Permissions.SubscribeOnNotifications))
+{
+    <a asp-action="SubscribeOnNotificationsAsync" class="btn btn-link d-block">
+        @Localizer["Subscribe"]
+    </a>
+}

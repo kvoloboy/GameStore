@@ -1,0 +1,57 @@
+﻿@model PageListViewModel
+@inject IViewLocalizer Localizer
+
+@{
+    ViewBag.Title = Localizer["Title"];
+}
+
+@section Styles
+{
+    <link rel="stylesheet" href="css/Game/Index.css">
+}
+
+<article class="main-page">
+    <header class="d-flex align-items-center">
+        <div class="games-wrapper d-flex justify-content-between">
+            <h1 class="games-header">@Localizer["Games"]</h1>
+            <div class="search-wrapper">
+                <input type="text" name="@nameof(FilterSelectedOptionsViewModel.Name)"
+                       form="filter" placeholder="@Localizer["Search for Game"]"
+                       class="search" value="@Model.Filter.FilterSelectedOptionsViewModel.Name">
+                <button type="submit" form="filter" asp-action="GetAllAsync" class="search-button button-transparent form-sender">
+                    <img src="img/Game/Index/search.png" class="search-img" alt="search">
+                </button>
+                <span class="field-validation-error" id="name-message"></span>
+            </div>
+        </div>
+        <div>
+            <h1 class="filter-header">@Localizer["Refine Results"]</h1>
+        </div>
+    </header>
+    <main class="d-flex">
+        <section class="games-wrapper">
+            <main class="filtered-games">
+                <partial model="@Model.Catalogue" name="Catalogue"/>
+            </main>
+            @if (User.IsAllowedPermission(Permissions.CreateGame))
+            {
+                <div class="text-center">
+                    <a asp-action="CreateAsync" class="orange-button">@Localizer["CreateButton"]</a>
+                </div>
+            }
+        </section>
+        <section>
+            @(await Html.PartialAsync("Filter", Model.Filter))
+        </section>
+    </main>
+</article>
+
+@section Scripts
+{
+    <script src="~/js/Game/select.js"></script>
+    <script src="~/js/Game/filter.js"></script>
+    <script src="~/js/Game/filterButtonUnlocker.js"></script>
+    <script src="~/lib/jquery/jquery.min.js"></script>
+    <script src="~/lib/jquery-validate/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

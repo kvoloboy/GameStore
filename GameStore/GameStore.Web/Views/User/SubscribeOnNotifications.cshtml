@@ -1,0 +1,14 @@
+﻿@model SubscribeOnNotificationsViewModel
+@inject IViewLocalizer Localizer
+
+@{
+    ViewBag.Title = Localizer["Title"];
+}
+
+<h3>Select notification methods</h3>
+<form asp-action="SubscribeOnNotificationsAsync">
+    @Html.CheckBoxList(Model.NotificationMethods, Model.SelectedNotifications, "notifications", string.Empty)
+    <button type="submit" class="btn btn-primary">
+        Subscribe
+    </button>
+</form>

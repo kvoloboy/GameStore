@@ -1,0 +1,38 @@
+﻿@model OrderDetailsViewModel
+@inject IViewLocalizer Localizer
+
+<div id="@Model.Id">
+    <hr/>
+    <div class="cart-item">
+        <div class="image-container">
+            <img src="@Model.GameImage" alt="game-image">
+        </div>
+        <div class="game-description">
+            <h3 class="game-name">@Model.GameName</h3>
+            <p class="platforms">@Localizer["Fake"]</p>
+            <p class="size">@Localizer["Fake"]</p>
+            <h3 class="game-price">@Model.Price.ToString(FormatTemplates.CurrencyFormat)</h3>
+            <div class="quantity-wrapper" data-price="@Model.Price">
+                <form asp-action="UpdateQuantityAsync" asp-route-detailsId="@Model.Id" asp-route-quantity="@(Model.Quantity - 1)"
+                      class="quantity-control decrement-button">
+                    <button type="submit" class="button-transparent details-changer" data-container-id="@Model.Id">
+                        <img src="img/Basket/Remove Icon.svg" alt="remove">
+                    </button>
+                </form>
+                <span class="quantity">@Model.Quantity</span>
+                <form asp-action="UpdateQuantityAsync" asp-route-detailsId="@Model.Id" asp-route-quantity="@(Model.Quantity + 1)"
+                      class="quantity-control increment-button">
+                    <button type="submit" class="button-transparent details-changer" data-container-id="@Model.Id">
+                        <img class="plus" src="img/Basket/Add Icon.svg" alt="add">
+                        <img class="plus-hover" src="img/Basket/Add Icon hover.svg" alt="add">
+                    </button>
+                </form>
+            </div>
+        </div>
+        <form asp-action="DeleteAsync" asp-route-id="@Model.Id">
+            <button class="application-link button-transparent button-remove details-changer" data-container-id="@Model.Id">
+                @Localizer["Remove"]
+            </button>
+        </form>
+    </div>
+</div>

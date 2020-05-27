@@ -1,0 +1,234 @@
+﻿@using GameStore.Web.Extensions
+@inject IViewLocalizer Localizer
+
+<!DOCTYPE html>
+<html lang="eu">
+<head>
+    <title>@ViewData["Title"]</title>
+    @RenderSection("Styles", false)
+    <link rel="stylesheet" href="~/lib/font-awesome/css/all.min.css"/>
+    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="~/css/_Layout.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="main-header">
+    <div class="application-container">
+        <div class="menu-container">
+            <a asp-action="Index" asp-controller="Home" class="logo">
+                @Localizer["logo"]
+            </a>
+            <nav>
+                <a class="menu-link" asp-action="GetAllAsync" asp-controller="Game">@Localizer["Games"]</a>
+                <a class="menu-link" asp-action="GetAllAsync" asp-controller="Genre">@Localizer["Genres"]</a>
+                <a class="menu-link" asp-action="GetAllAsync" asp-controller="Publisher">@Localizer["Publishers"]</a>               
+
+                @if (User.IsAllowedPermission(Permissions.ReadPersonalOrders))
+                {
+                    <a class="menu-link" asp-action="GetPersonalArea" asp-controller="User">@Localizer["Personal"]</a>
+                }
+
+                @if (User.IsAllowedPermission(Permissions.ReadOrders))
+                {
+                    <a class="menu-link" asp-action="HistoryAsync" asp-controller="Order">@Localizer["History"]</a>
+                }
+
+                @if (User.IsAllowedPermission(Permissions.ReadOrders))
+                {
+                    <a class="menu-link" asp-action="ListAsync" asp-controller="Order">@Localizer["Orders management"]</a>
+                }
+
+                @await Component.InvokeAsync("BasketLink")
+
+                @if (User.IsAllowedPermission(Permissions.ReadUsers))
+                {
+                    <a class="menu-link" asp-action="IndexAsync" asp-controller="User">@Localizer["Users"]</a>
+                }
+
+                @if (User.IsAllowedPermission(Permissions.ReadRoles))
+                {
+                    <a class="menu-link" asp-action="IndexAsync" asp-controller="Role">@Localizer["Roles"]</a>
+                }
+
+                @if (User.Identity.IsAuthenticated && !User.IsInRole(DefaultRoles.Guest))
+                {
+                    <a class="menu-link" asp-controller="Account" asp-action="SignOutAsync" asp-route-returnUrl="@Context.Request.PathAndQuery()">
+                        @Localizer["SignOut"]
+                    </a>
+                }
+                else
+                {
+                    <a class="menu-link" asp-action="RegisterAsync" asp-controller="Account">@Localizer["Register"]</a>
+                    <a class="menu-link" asp-action="SignInAsync" asp-controller="Account">@Localizer["SignIn"]</a>
+                }
+            </nav>
+        </div>
+        <h1 class="headline">
+            @Localizer["Headline"]
+        </h1>
+        <h2 class="headline-bottom">
+            @Localizer["Headline bottom"]
+        </h2>
+    </div>
+
+</header>
+<main class="content-container">
+    <div class="application-container">
+        @RenderBody()
+    </div>
+</main>
+<article class="news application-container">
+    <article class="news-section">
+        <div class="news-section-container">
+            <h2>@Localizer["Get In Touch"]</h2>
+            <div>
+                <form action="#" id="news-form" class="news-form">
+                    <div class="input-group">
+                        <label class="d-block" for="name">@Localizer["Name"]</label>
+                        <input class="post-input" id="name" type="text">
+                    </div>
+                    <div class="input-group">
+                        <label class="d-block" for="email">@Localizer["Email"]</label>
+                        <input class="post-input" id="email" type="email">
+                    </div>
+                    <div class="input-group">
+                        <label for="message">@Localizer["Message"]</label>
+                        <textarea class="post-input" id="message"></textarea>
+                    </div>
+                </form>
+                <button form="news-form" class="orange-button btn-bottom">
+                    @Localizer["Submit"]
+                </button>
+            </div>
+        </div>
+    </article>
+    <article class="news-section">
+        <div class="news-section-container">
+            <h2>@Localizer["Twitter Updates"]</h2>
+            <div class="post">
+                <p class="post-text">Devil May Cry 5</p>
+                <div>
+                    <a href="#" class="application-link">
+                        http://goo.gl/eJVm
+                    </a>
+                </div>
+                <small>@Localizer["Reply date"]</small>
+            </div>
+            <hr>
+            <div class="post">
+                <p class="post-text">Dead or Alive 6 Special Edition</p>
+                <div>
+                    <a href="#" class="application-link">
+                        http://goo.gl/eJVm
+                    </a>
+                </div>
+                <small>@Localizer["Reply date"]</small>
+            </div>
+            <hr>
+            <div class="post">
+                <p class="post-text">Resident Evil 2 Deluxe Edition</p>
+                <div>
+                    <a href="#" class="application-link">
+                        http://goo.gl/eJVm
+                    </a>
+                </div>
+                <small>@Localizer["Reply date"]</small>
+            </div>
+            <a href="#" class="orange-button btn-bottom">
+                @Localizer["Follow Us"]
+            </a>
+        </div>
+    </article>
+    <article class="news-section">
+        <div class="news-section-container">
+            <h2>@Localizer["From the Blog"]</h2>
+            <div class="post">
+                <p class="post-text">
+                    @Localizer["Post text"]
+                    <a href="#" class="application-link">
+                        @Localizer["Learn more"]
+                    </a>
+                </p>
+            </div>
+            <hr>
+            <div class="post">
+                <p class="post-text">
+                    @Localizer["Post text"]
+                    <a href="#" class="application-link">
+                        @Localizer["Learn more"]
+                    </a>
+                </p>
+            </div>
+            <hr>
+            <div class="post">
+                <p class="post-text">
+                    @Localizer["Post text"]
+                    <a href="#" class="application-link">
+                        @Localizer["Learn more"]
+                    </a>
+                </p>
+            </div>
+            <hr>
+            <div class="post">
+                <p class="post-text">
+                    @Localizer["Post text"]
+                    <a href="#" class="application-link">
+                        @Localizer["Learn more"]
+                    </a>
+                </p>
+            </div>
+            <a href="#" class="orange-button btn-bottom">
+                @Localizer["Visit Blog"]
+            </a>
+        </div>
+    </article>
+</article>
+<footer class="application-footer">
+    <div class="application-container">
+        <div class="footer-menu">
+            <div class="footer-navigation">
+                <h3 class="footer-heading">@Localizer["Site links"]</h3>
+                <a class="footer-link" asp-action="GetAllAsync" asp-controller="Game">@Localizer["Games"]</a>
+                <a class="footer-link" asp-action="GetAllAsync" asp-controller="Genre">@Localizer["Genres"]</a>
+                <a class="footer-link" asp-action="GetAllAsync" asp-controller="Publisher">@Localizer["Publishers"]</a>
+                <a class="footer-link" asp-action="GetForUserAsync" asp-controller="Order">@Localizer["Orders"]</a>
+                <a class="footer-link" asp-action="IndexAsync" asp-controller="Basket">@Localizer["My Bucket"]</a>
+            </div>
+            <div>
+                <h3 class="footer-heading">@Localizer["Company information"]</h3>
+                <a class="footer-link" href="#">@Localizer["About"]</a>
+                <a class="footer-link" href="#">@Localizer["Awards"]</a>
+                <a class="footer-link" href="#">@Localizer["Reviews"]</a>
+                <a class="footer-link" href="#">@Localizer["Testimonials"]</a>
+                <a class="footer-link" href="#">@Localizer["Contact"]</a>
+            </div>
+            <div>
+                <div class="contacts">
+                    <h3 class="footer-heading">@Localizer["Social Media"]</h3>
+                    <a class="footer-icon" href="#">
+                        <img src="~/img/Footer/twitter-svgrepo-com.svg" alt="twitter">
+                    </a>
+                    <a class="footer-icon" href="#">
+                        <img src="~/img/Footer/facebook-svgrepo-com.svg" alt="facebook">
+                    </a>
+                    <a class="footer-icon" href="#">
+                        <img src="~/img/Footer/email-svgrepo-com.svg" alt="e-mail">
+                    </a>
+                    <a class="footer-icon" href="#">
+                        <img src="~/img/Footer/instagram-logo-svgrepo-com.svg" alt="instagram">
+                    </a>
+                    <a class="footer-icon" href="#">
+                        <img src="~/img/Footer/google-plus-logo-symbol-svgrepo-com.svg" alt="google">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <p class="copyright">@Localizer["Copyright"]</p>
+    </div>
+</footer>
+@RenderSection("Scripts", false)
+<script src="~/js/navLinkHighlighter.js"></script>
+</body>
+</html>

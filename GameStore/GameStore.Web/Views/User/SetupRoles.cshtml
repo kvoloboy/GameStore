@@ -1,0 +1,19 @@
+﻿@model ModifyUserViewModel
+@inject IViewLocalizer Localizer
+
+@{
+    ViewBag.Title = Localizer["Title"];
+}
+
+<div>
+    <span class="font-weight-bold">@Localizer["UserId"]:</span>
+    <span class="pl-3">@Model.Id</span>
+</div>
+
+<form asp-action="SetupRolesAsync">
+    <input asp-for="Id" type="hidden">
+    @Html.CheckBoxList(Model.Roles, Model.SelectedRoles, nameof(ModifyUserViewModel.SelectedRoles), "roles")
+    <button type="submit" class="btn btn-primary">
+        @Localizer["AssignRoles"]
+    </button>
+</form>

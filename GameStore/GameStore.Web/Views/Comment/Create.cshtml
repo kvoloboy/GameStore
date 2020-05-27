@@ -1,0 +1,24 @@
+﻿@model CommentViewModel
+@inject IViewLocalizer Localizer
+
+@if (User.IsAllowedPermission(Permissions.CreateComment))
+{
+    <div class="form-wrapper upper-margin">
+        <form asp-action="CreateAsync" id="create-comment">
+        <input type="hidden" asp-for="GameKey">
+            <div class="input-group">
+                <label class="d-block" asp-for="Name">@Localizer["Name"]</label>
+                <input class="post-input" asp-for="Name">
+                <span asp-validation-for="Name"></span>
+            </div>
+            <div class="input-group">
+                <label asp-for="Body">@Localizer["Body"]</label>
+                <textarea class="post-input" asp-for="Body" rows="4"></textarea>
+                <span asp-validation-for="Body"></span>
+            </div>
+            <button type="submit" class="orange-button" id="new-comment">
+                @Localizer["Comment"]
+            </button>
+        </form>
+    </div>
+}

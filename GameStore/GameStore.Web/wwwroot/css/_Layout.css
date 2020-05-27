@@ -1,0 +1,298 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+p, figure {
+    margin: 0;
+}
+
+hr {
+    width: 100%;
+    height: 1px;
+    background-color: #DCDCDC;
+    margin: 0;
+    border: 0;
+}
+
+a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+button:focus,
+a:focus {
+    outline: none;
+}
+
+.main-header {
+    background-image: url("../img/Header/florian-olivo-1167169-unsplash.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    color: #fff;
+}
+
+.w-60 {
+    width: 60vw;
+}
+
+.application-container {
+    width: 90vw;
+    margin: 0 auto;
+}
+
+.menu-container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 4vw;
+    align-items: center;
+}
+
+.menu-link,
+.menu-link:hover {
+    font-size: 16px;
+    line-height: 19px;
+    color: #fff;
+    margin-left: 2.5vw;
+    text-transform: uppercase;
+}
+
+
+.menu-link-orange {
+    color: #FF7E2A;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+.logo {
+    font-size: 36px;
+    line-height: 44px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.logo:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+.headline {
+    margin-top: 45vh;
+    width: 40vw;
+    line-height: 57px;
+    font-size: 46px;
+}
+
+.headline-bottom {
+    margin-top: 24px;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.content-container {
+    margin: 10vh 0;
+}
+
+.news {
+    display: flex;
+    justify-content: space-between;
+}
+
+.news-section {
+    margin-bottom: 10vh;
+    background-color: #F7F7F7;
+    width: 28.5vw;
+}
+
+.news-section-container {
+    padding: 5vh 2vw;
+    min-height: 100%;
+    position: relative;
+}
+
+.news-section-container h2 {
+    color: #3E4554;
+    font-size: 26px;
+    line-height: 32px;
+    padding-bottom: 24px;
+}
+
+.news-form {
+    min-height: 100%;
+}
+
+.input-group {
+    margin-bottom: 2vh;
+}
+
+.input-group label {
+    display: block;
+    color: #3E4554;
+}
+
+.post {
+    margin-top: 10px;
+    margin-bottom: 16px;
+}
+
+.post-text {
+    color: #3E4554;
+    margin-bottom: 6px;
+}
+
+
+.application-link {
+    color: #FF7E2A;
+    text-decoration: underline #FF7E2A;
+}
+
+.application-link:hover {
+    color: #FF7E2A;
+    text-decoration: underline #FF7E2A;
+}
+
+.post small {
+    color: #9B9B9B;
+    font-size: 12px;
+    line-height: 22px;
+}
+
+.post-input {
+    border: 1px solid #7f7f7f;
+    width: 100%;
+    padding: 1.2vh 0.5vw;
+    color: #000;
+}
+
+#message {
+    height: 15vh;
+    resize: none;
+    margin-bottom: 5vh;
+}
+
+.orange-button {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+    text-align: center;
+    border: none;
+    padding: 1.5vh 3vw;
+    background-color: #F57D06;
+    color: #fff;
+    cursor: pointer;
+}
+
+.button-transparent {
+    background: transparent;
+    border: transparent;
+}
+
+.btn-bottom {
+    position: absolute;
+    right: 2vw;
+    bottom: 2vh;
+}
+
+.application-footer {
+    background-color: #222222;
+    color: #fff;
+}
+
+.footer-menu {
+    display: flex;
+    padding: 5vh 0 2vh 0;
+}
+
+.footer-navigation {
+    margin-right: 25vw;
+}
+
+.contacts {
+    margin-left: 20vw;
+}
+
+.footer-heading {
+    font-size: 16px;
+    line-height: 19px;
+    margin-bottom: 4vh;
+}
+
+.footer-link {
+    font-size: 14px;
+    line-height: 18px;
+    color: #fff;
+    margin-bottom: 3vh;
+    display: block;
+}
+
+.footer-icon {
+    margin-right: 1.5vw;
+}
+
+.footer-icon:hover {
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+.copyright {
+    padding-bottom: 5vh;
+    margin: 0;
+}
+
+.issues-list {
+    list-style: none;
+    margin-bottom: 32px;
+}
+
+.issues-list li {
+    position: relative;
+    margin-left: 0;
+    padding-left: 1.5em;
+    margin-top: 2vh;
+}
+
+.issues-list li::before {
+    content: "\2022";
+    display: inline-block;
+    color: #FF7E2A;
+    font-weight: bold;
+    opacity: 0.66;
+    position: absolute;
+    left: 0;
+    font-size: 2em;
+    top: -.5em;
+}
+
+.page-number {
+    font-size: 14px;
+    line-height: 18px;
+    color: #737373;
+    margin-right: 2vw;
+    cursor: pointer;
+    position: relative;
+}
+
+.page-number.selected {
+    color: #4A4A4A;
+}
+
+.page-number.selected::after {
+    content: "";
+    border-bottom: 1px solid #4A4A4A;
+    margin-top: 1.5vh;
+    display: block;
+    position: absolute;
+    width: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.page-number:hover {
+    color: #737373;
+}

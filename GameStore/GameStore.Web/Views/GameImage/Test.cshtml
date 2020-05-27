@@ -1,0 +1,9 @@
+﻿@{
+    ViewBag.Title = "title";
+}
+
+<div class="mt-4 m-auto">
+    <a class="text-success mr-2" asp-action="GetById" asp-route-id="1">Get sync</a>
+    <a class="text-info mr-2" asp-action="GetByIdAsync" asp-route-id="1">Get async</a>
+    <a class="text-danger" href="/images/1/get-with-middleware">Get with a middleware</a>
+</div>

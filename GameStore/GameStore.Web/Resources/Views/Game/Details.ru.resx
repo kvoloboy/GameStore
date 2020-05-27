@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+        </value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+        </value>
+    </resheader>
+    <data name="Title" xml:space="preserve">
+        <value>Информация о игре</value>
+    </data>
+    <data name="Id" xml:space="preserve">
+        <value>Идентификатор</value>
+    </data>
+    <data name="Key" xml:space="preserve">
+        <value>Ключ</value>
+        <comment>Key</comment>
+    </data>
+    <data name="Name" xml:space="preserve">
+        <value>Имя</value>
+    </data>
+    <data name="Description" xml:space="preserve">
+        <value>Описание</value>
+    </data>
+    <data name="UnitsInStock" xml:space="preserve">
+        <value>Количество в наличии</value>
+    </data>
+    <data name="Price" xml:space="preserve">
+        <value>Цена</value>
+    </data>
+    <data name="Publisher" xml:space="preserve">
+        <value>Производитель</value>
+    </data>
+    <data name="Genres" xml:space="preserve">
+        <value>Жанры</value>
+        <comment>Genres</comment>
+    </data>
+    <data name="Platforms" xml:space="preserve">
+        <value>Платформы</value>
+        <comment>Platforms</comment>
+    </data>
+    <data name="ToBasket" xml:space="preserve">
+        <value>В корзину</value>
+    </data>
+    <data name="DownloadLabel" xml:space="preserve">
+        <value>Кликните сюда чтобы скачать игру</value>
+    </data>
+    <data name="OpenComments" xml:space="preserve">
+        <value>Показать комментарии</value>
+    </data>
+    <data name="Go Back to Game List" xml:space="preserve">
+        <value>Вернуться к каталогу</value>
+    </data>
+    <data name="comments" xml:space="preserve">
+        <value>комментариев</value>
+    </data>
+    <data name="Details text" xml:space="preserve">
+        <value>
+            Приобретите Ace Combat 7: Skies Unknown Launch Edition, который будет доступен до 18.02.2009, и получите следующий контент:
+        </value>
+    </data>
+    <data name="Bundle" xml:space="preserve">
+        <value>Комплект</value>
+    </data>
+    <data name="Released" xml:space="preserve">
+        <value>Издано</value>
+    </data>
+    <data name="Playable on" xml:space="preserve">
+        <value>Платформы</value>
+    </data>
+    <data name="File size" xml:space="preserve">
+        <value>Размер файла</value>
+    </data>
+    <data name="Fake" xml:space="preserve">
+        <value>Фейк</value>
+    </data>
+    <data name="What You Get" xml:space="preserve">
+        <value>Что вы получите</value>
+    </data>
+    <data name="First issue" xml:space="preserve">
+        <value>Ace Combat 7: Небеса неизвестны;</value>
+    </data>
+    <data name="Second issue" xml:space="preserve">
+        <value>Ace Combat 5: Невеспетая война</value>
+    </data>
+    <data name="Third issue" xml:space="preserve">
+        <value>Играбельный самолет F-4E Phantom II;</value>
+    </data>
+    <data name="Forth issue" xml:space="preserve">
+        <value>
+            3 популярных скина самолета из прошлых титулов (Су-37: Желтый 13, F-14D: Разгриз, F-15C).
+        </value>
+    </data>
+    <data name="Bundle text" xml:space="preserve">
+        <value>
+            Этот комплект также поставляется с играбельным самолетом F-104C: Avril DLC в качестве эксклюзивного цифрового бонуса.
+        </value>
+    </data>
+    <data name="Game Description" xml:space="preserve">
+        <value>Описание Игры</value>
+    </data>
+    <data name="Write A Comment" xml:space="preserve">
+        <value>Напишите комментарий</value>
+    </data>
+    <data name="Update" xml:space="preserve">
+        <value>Обновить</value>
+    </data>
+    <data name="Delete" xml:space="preserve">
+        <value>Удалить</value>
+    </data>
+    <data name="Images" xml:space="preserve">
+        <value>Картинки</value>
+    </data>
+</root>

@@ -1,0 +1,34 @@
+﻿@model IEnumerable<UserViewModel>
+@inject IViewLocalizer Localizer
+
+@{
+    ViewBag.Title = Localizer["Title"];
+}
+
+<table class="table table-bordered table-striped tab-sm">
+    <thead>
+    <th>@Localizer["Id"]</th>
+    <th>@Localizer["Email"]</th>
+    <th>@Localizer["Roles"]</th>
+    <th>@Localizer["Actions"]</th>
+    </thead>
+    @foreach (var user in Model)
+    {
+        <tr>
+            <td>@user.Id</td>
+            <td>@user.Email</td>
+            <td>@user.Roles</td>
+            <td>
+                @if (User.IsAllowedPermission(Permissions.SetupRoles))
+                {
+                    <a class="btn btn-secondary" asp-action="SetupRolesAsync" asp-route-userId="@user.Id">
+                        @Localizer["SetupRoles"]
+                    </a>
+                    <a class="btn btn-secondary" asp-action="AssignToPublisherAsync" asp-route-userId="@user.Id">
+                        @Localizer["AssignToPublisher"]
+                    </a>
+                }
+            </td>
+        </tr>
+    }
+</table>

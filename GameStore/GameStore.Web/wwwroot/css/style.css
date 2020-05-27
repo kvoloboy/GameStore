@@ -1,0 +1,21 @@
+﻿.field-validation-error {
+    color: red;
+    font-size: smaller;
+}
+
+#comments-container {
+    max-width: 60vw;
+}
+
+.w-20 {
+    width: 20vw;
+}
+
+.w-60 {
+    width: 60vw;
+}
+
+.current {
+    background: #005cbf;
+    color: #fff;
+}

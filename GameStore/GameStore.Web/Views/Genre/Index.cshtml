@@ -1,0 +1,47 @@
+﻿@model IEnumerable<ModifyGenreViewModel>
+@inject IViewLocalizer Localizer
+
+@{
+    ViewBag.Title = Localizer["Title"];
+}
+<div class="text-center">
+    <table class="table table-borderless">
+        <thead>
+        <tr>
+            <th>@Localizer["Id"]</th>
+            <th>@Localizer["Name"]</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var genre in Model)
+        {
+            <tr>
+                <td>@genre.Id</td>
+                <td>@genre.Name</td>
+                <td>
+                    @if (User.IsAllowedPermission(Permissions.UpdateGenre))
+                    {
+                        <a asp-action="UpdateAsync" class="btn btn-primary" asp-route-id="@genre.Id">
+                            @Localizer["UpdateButton"]
+                        </a>
+                    }
+                    @if (User.IsAllowedPermission(Permissions.DeleteGenre))
+                    {
+                        <form class="d-inline-block" asp-action="DeleteAsync" asp-route-id="@genre.Id">
+                            <button type="submit" class="btn btn-danger">
+                                @Localizer["DeleteButton"]
+                            </button>
+                        </form>
+                    }
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+    @if (User.IsAllowedPermission(Permissions.CreateGenre))
+    {
+        <div class="text-center pt-5">
+            <a asp-action="CreateAsync" class="btn btn-lg btn-outline-primary">@Localizer["CreateButton"]</a>
+        </div>
+    }
+</div>

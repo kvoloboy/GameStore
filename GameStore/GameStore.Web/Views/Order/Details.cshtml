@@ -1,0 +1,101 @@
+﻿@model DetailedOrderViewModel
+@inject IViewLocalizer Localizer
+
+@{
+    ViewBag.Title = Localizer["Title"];
+}
+
+<div>
+    <div>
+        <span class="font-weight-bold">@Localizer["Shipper"]:</span>
+        <span class="pl-3">@Model.ShipperName</span>
+    </div>
+    <div>
+        <span class="font-weight-bold">@Localizer["Name"]:</span>
+        <span class="pl-3">@Model.ShipmentViewModel.Name</span>
+    </div>
+    <div>
+        <span class="font-weight-bold">@Localizer["Address"]:</span>
+        <span class="pl-3">@Model.ShipmentViewModel.Address</span>
+    </div>
+    <div>
+        <span class="font-weight-bold">@Localizer["City"]:</span>
+        <span class="pl-3">@Model.ShipmentViewModel.City</span>
+    </div>
+    <div>
+        <span class="font-weight-bold">@Localizer["Region"]:</span>
+        <span class="pl-3">@Model.ShipmentViewModel.Region</span>
+    </div>
+    <div>
+        <span class="font-weight-bold">@Localizer["Country"]:</span>
+        <span class="pl-3">@Model.ShipmentViewModel.Country</span>
+    </div>
+    <div>
+        <span class="font-weight-bold">@Localizer["PostalCode"]:</span>
+        <span class="pl-3">@Model.ShipmentViewModel.PostalCode</span>
+    </div>
+    <div>
+        <span class="font-weight-bold">@Localizer["TotalItems"]:</span>
+        <span class="pl-3">@Model.TotalItems</span>
+    </div>
+    <div>
+        <span class="font-weight-bold">@Localizer["TotalSum"]:</span>
+        <span class="pl-3">@Model.TotalSum</span>
+    </div>
+    <div>
+        <span class="font-weight-bold">@Localizer["State"]:</span>
+        <span class="pl-3">@Model.State</span>
+    </div>
+</div>
+<div class="mt-4">
+    <div class="m-2">
+        @if (Model.CanBeUpdated && User.IsAllowedPermission(Permissions.UpdateOrder))
+        {
+            <div>
+                <a asp-action="CreateAsync" asp-controller="OrderDetails" asp-route-orderId="@Model.OrderId" class="btn btn-primary">
+                    @Localizer["AddDetailsButton"]
+                </a>
+            </div>
+            <div class="mt-2">
+                <a asp-action="UpdateShipmentsAsync" class="btn btn-primary" asp-route-orderId="@Model.OrderId">
+                    @Localizer["UpdateShipmentsButton"]
+                </a>
+            </div>
+            <div class="mt-2">
+                <a asp-action="UpdateStateAsync" class="btn btn-primary" asp-route-orderId="@Model.OrderId">
+                    @Localizer["UpdateStateButton"]
+                </a>
+            </div>
+        }
+    </div>
+    <table class="table table-bordered table-sm table-striped">
+        <thead>
+        <th>@Localizer["Game"]</th>
+        <th>@Localizer["Quantity"]</th>
+        <th>@Localizer["Price"]</th>
+        <th>@Localizer["Discount"]</th>
+        </thead>
+        <tbody>
+        @foreach (var details in Model.OrderDetailsViewModels)
+        {
+            <tr>
+                <td>@details.GameName</td>
+                <td>@details.Quantity</td>
+                <td>@details.Price.ToString(FormatTemplates.CurrencyFormat)</td>
+                <td>@details.Discount</td>
+                @if  (Model.CanBeUpdated && User.IsAllowedPermission(Permissions.UpdateOrder))
+                {
+                    <td class="d-flex justify-content-around">
+                        <a asp-action="UpdateAsync" asp-controller="OrderDetails" class="btn btn-secondary" asp-route-id="@details.Id">
+                            @Localizer["UpdateButton"]
+                        </a>
+                        <form asp-action="DeleteAsync" asp-controller="OrderDetails" asp-route-id="@details.Id">
+                            <button type="submit" class="btn btn-danger">@Localizer["DeleteButton"]</button>
+                        </form>
+                    </td>
+                }
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>

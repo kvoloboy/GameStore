@@ -1,0 +1,23 @@
+﻿@model ErrorViewModel
+@inject IViewLocalizer Localizer
+
+@{
+    ViewBag.Title = Localizer["Title"];
+}
+
+<div class="text-center">
+    <h2>
+        @Localizer["Header"]
+    </h2>
+    <div>
+        <p>
+            <span class="font-weight-bold">@Localizer["Message"]: </span>
+            @Model.Message
+        </p>
+        <p>
+            <span class="font-weight-bold">
+                @Localizer["Path"]: 
+            </span> @Model.Path
+        </p>
+    </div>
+</div>

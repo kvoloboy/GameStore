@@ -1,0 +1,50 @@
+﻿@model ShipmentViewModel
+@inject IViewLocalizer Localizer
+
+@{
+    ViewBag.Title = Localizer["Title"];
+}
+
+<form asp-action="UpdateShipmentsAsync">
+    <div asp-validation-summary="ModelOnly"></div>
+    <input type="hidden" asp-for="@Model.OrderId">
+    <span class="font-weight-bold">Order id: <span>@Model.OrderId</span></span>
+    <div class="form-group">
+        <label asp-for="Name">@Localizer["ReceiverName"]</label>
+        <input asp-for="Name" class="form-control">
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Address">@Localizer["Address"]</label>
+        <input asp-for="Address" class="form-control">
+        <span asp-validation-for="Address"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="City">@Localizer["City"]</label>
+        <input asp-for="City" class="form-control">
+        <span asp-validation-for="City"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Region">@Localizer["Region"]</label>
+        <input asp-for="Region" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="Country">@Localizer["Country"]</label>
+        <input asp-for="Country" class="form-control">
+        <span asp-validation-for="Country"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="PostalCode">@Localizer["PostalCode"]</label>
+        <input asp-for="PostalCode" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="ShipperEntityId">@Localizer["Shippers"]</label>
+        <select class="form-control" asp-for="ShipperEntityId" asp-items="Model.Shippers">
+            <option value="@string.Empty">@Localizer["None"]</option>
+        </select>
+        <span asp-validation-for="ShipperEntityId"></span>
+    </div>
+    <div class="text-center">
+        <button type="submit" class="btn btn-lg btn-outline-primary">@Localizer["UpdateShipmentsButton"]</button>
+    </div>
+</form>

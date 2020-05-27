@@ -1,0 +1,47 @@
+﻿@inject IViewLocalizer Localizer
+
+@{
+    ViewBag.Title = Localizer["Title"];
+}
+
+@section Styles
+{
+    <link rel="stylesheet" href="css/Home/Index.css">
+}
+
+<article class="intro d-flex">
+    <section class="intro-left">
+        <h1 class="intro-header">@Localizer["Main Header"]</h1>
+        <p>
+            @Localizer["Main Text"]
+        </p>
+        <ul class="issues-list">
+            <li>
+                @Localizer["First issue"]
+            </li>
+            <li>
+                @Localizer["Second issue"]
+            </li>
+            <li>
+                @Localizer["Third issue"]
+            </li>
+        </ul>
+        <a class="orange-button" href="#">
+            @Localizer["Learn More"]
+        </a>
+    </section>
+    <section class="intro-right">
+        <h1 class="intro-header">@Localizer["We Knocked Em’ll"]</h1>
+        <figure class="img-container">
+            <img width="100%" src="img/Home/uriel-soberanes-794026-unsplash copy.png" alt="person">
+            <div class="image-text">
+                <h2>
+                    Sony Playstation VR
+                    <a href="#" >
+                        <img src="img/Home/Arrow.svg" class="arrow" alt="arrow">
+                    </a>
+                </h2>
+            </div>
+        </figure>
+    </section>
+</article>

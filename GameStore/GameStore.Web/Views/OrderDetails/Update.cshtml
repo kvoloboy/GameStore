@@ -1,0 +1,22 @@
+﻿@model ModifyOrderDetailsViewModel
+@inject IViewLocalizer Localizer
+
+@{
+    ViewBag.Title = Localizer["Title"];
+}
+
+<form asp-action="UpdateAsync">
+    <input type="hidden" asp-for="Id">
+    <input type="hidden" asp-for="OrderId">
+    <div class="form-group">
+        <label asp-for="GameId">@Localizer["SelectGame"]</label>
+        <select asp-for="GameId" asp-items="Model.Games" class="form-control"></select>
+    </div>
+    <div class="form-group">
+        <label asp-for="Quantity">@Localizer["Quantity"]</label>
+        <input asp-for="Quantity" class="form-control">
+    </div>
+    <div class="text-center">
+        <button type="submit" class="btn btn-primary">@Localizer["UpdateButton"]</button>
+    </div>
+</form>

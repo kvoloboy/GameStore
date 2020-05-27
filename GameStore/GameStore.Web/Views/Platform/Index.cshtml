@@ -1,0 +1,47 @@
+﻿@model IEnumerable<PlatformViewModel>
+@inject IViewLocalizer Localizer
+
+@{
+    ViewBag.Title = Localizer["Title"];
+}
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>@Localizer["Id"]</th>
+        <th>@Localizer["Name"]</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var platform in Model)
+    {
+        <tr>
+            <td>@platform.Id</td>
+            <td>@platform.Name</td>
+            <td class="text-center">
+                @if (User.IsAllowedPermission(Permissions.UpdatePlatform))
+                {
+                    <a asp-action="UpdateAsync" class="btn btn-primary" asp-route-id="@platform.Id">
+                        @Localizer["UpdateButton"]
+                    </a>
+                }
+                @if (User.IsAllowedPermission(Permissions.DeletePlatform))
+                {
+                    <form class="d-inline-block" asp-action="DeleteAsync" asp-route-id="@platform.Id">
+                        <button type="submit" class="btn btn-danger">
+                            @Localizer["DeleteButton"]
+                        </button>
+                    </form>
+                }
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+@if (User.IsAllowedPermission(Permissions.CreatePlatform))
+{
+    <div class="text-center pt-5">
+        <a asp-action="CreateAsync" class="btn btn-lg btn-outline-primary">@Localizer["Create"]</a>
+    </div>
+}

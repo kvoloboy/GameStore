@@ -1,0 +1,167 @@
+﻿@model FilterViewModel
+@inject IViewLocalizer Localizer
+
+<cache>
+    <article class="filter-wrapper">
+        <main class="filter-list">
+            <form asp-action="GetFilteredAsync" id="filter" method="get">
+                <input type="hidden" value="@Model.FilterSelectionDataViewModel.SortOptions.FirstOrDefault(o => o.Selected)?.Value"
+                       name="@nameof(FilterSelectedOptionsViewModel.SortOption)">
+                <input type="hidden" value="@Model.FilterSelectionDataViewModel.PageSizes.FirstOrDefault(p => p.Selected)?.Value"
+                       name="@nameof(FilterSelectedOptionsViewModel.PageSize)">
+                <section class="filter-section">
+                    <h3 class="filter-name">@Localizer["Sorting"]</h3>
+                    <hr>
+                    <div class="select-container">
+                        <div class="select-box filter-set">
+                            <div class="options-wrapper">
+                                <div class="options-container">
+                                    @foreach (var sort in Model.FilterSelectionDataViewModel.SortOptions)
+                                    {
+                                        <div class="option">
+                                            <input type="radio" class="radio">
+                                            <a href="@sort.Link" class="sort-option form-sender d-flex @(sort.Selected ? " orange" : string.Empty)">
+                                                @sort.Name
+                                            </a>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                            <div class="select-head">
+                                <div class="selected-option">
+                                    @(Model.FilterSelectionDataViewModel.SortOptions.FirstOrDefault(s => s.Selected)?.Name ?? SortOptions.MostPopular)
+                                </div>
+                                <div class="select-arrow">
+                                    <img src="~/img/Game/Index/sort-arrow.svg" alt="arrow">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="filter-section">
+                    <h3 class="filter-name">@Localizer["Price Range"]</h3>
+                    <hr>
+                    <div class="d-flex justify-content-between filter-set">
+                        <div class="price-segment">
+                            <label class="price-label">
+                                @Localizer["From"]:
+                                <input type="number" min="0" class="filter-input" name="@nameof(FilterSelectedOptionsViewModel.MinPrice)"
+                                       value="@Model.FilterSelectedOptionsViewModel.MinPrice.ToString(FormatTemplates.CurrencyFormat)"
+                                       placeholder="@Model.FilterSelectionDataViewModel.MinPrice.ToString(FormatTemplates.CurrencyFormat)">
+                            </label>
+                        </div>
+                        <div class="price-segment">
+                            <label class="price-label">
+                                @Localizer["To"]:
+                                <input type="number" min="0" class="filter-input" name="@nameof(FilterSelectedOptionsViewModel.MaxPrice)"
+                                       value="@Model.FilterSelectedOptionsViewModel.MaxPrice.ToString(FormatTemplates.CurrencyFormat)"
+                                       placeholder="@Model.FilterSelectionDataViewModel.MaxPrice.ToString(FormatTemplates.CurrencyFormat)">
+                            </label>
+                        </div>
+                    </div>
+                </section>
+                <section class="filter-section">
+                    <h3 class="filter-name">@Localizer["Page size"]</h3>
+                    <hr>
+                    <div class="select-container">
+                        <div class="select-box filter-set">
+                            <div class="options-wrapper">
+                                <div class="options-container">
+                                    @foreach (var pageSize in Model.FilterSelectionDataViewModel.PageSizes)
+                                    {
+                                        <div class="option">
+                                            <input type="radio" class="radio">
+                                            <a href="@pageSize.Link" class="page-size-option form-sender d-flex @(pageSize.Selected ? " orange" : string.Empty)">
+                                                @pageSize.Name
+                                            </a>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                            <div class="select-head">
+                                <div class="selected-option">
+                                    @(Model.FilterSelectionDataViewModel.PageSizes.FirstOrDefault(s => s.Selected)?.Name ?? PageSize.Ten)
+                                </div>
+                                <div class="select-arrow">
+                                    <img src="~/img/Game/Index/sort-arrow.svg" alt="arrow">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="filter-section">
+                    <h3 class="filter-name">@Localizer["Publisher"]</h3>
+                    <hr>
+                    <div class="filter-set">
+                        @foreach (var publisher in Model.FilterSelectionDataViewModel.Publishers)
+                        {
+                            <div>
+                                <label class="custom-input-container">
+                                    @publisher.Name
+                                    <input class="custom-checkbox" type="checkbox" name="@nameof(FilterSelectedOptionsViewModel.Publishers)"
+                                           value="@publisher.Id" @(publisher.Selected ? "checked" : string.Empty)>
+                                    <span class="check-mark"></span>
+                                </label>
+                            </div>
+                        }
+                    </div>
+                </section>
+                <section class="filter-section">
+                    <h3 class="filter-name">@Localizer["Release Date"]</h3>
+                    <hr>
+                    <div class="filter-set">
+                        @foreach (var creationDate in Model.FilterSelectionDataViewModel.PublishingDates)
+                        {
+                            <div>
+                                <label class="custom-input-container">
+                                    @creationDate.Name
+                                    <input name="@nameof(FilterSelectedOptionsViewModel.CreationDate)"
+                                           type="radio" class="custom-radio" value="@creationDate.Id"
+                                           @(creationDate.Selected ? "checked" : string.Empty)>
+                                    <span class="radio-mark"></span>
+                                </label>
+                            </div>
+                        }
+                    </div>
+                </section>
+                <section class="filter-section">
+                    <h3 class="filter-name">@Localizer["Genre"]</h3>
+                    <hr>
+                    <div class="filter-set">
+                        @foreach (var genre in Model.FilterSelectionDataViewModel.Genres)
+                        {
+                            <div>
+                                <label class="custom-input-container">
+                                    @genre.Name
+                                    <input type="checkbox" class="custom-checkbox" name="@nameof(FilterSelectedOptionsViewModel.Genres)"
+                                           value="@genre.Id" @(genre.Selected ? "checked" : string.Empty)>
+                                    <span class="check-mark"></span>
+                                </label>
+                            </div>
+                        }
+                    </div>
+                </section>
+                <section class="filter-section">
+                    <h3 class="filter-name">@Localizer["Platform"]</h3>
+                    <hr>
+                    <div class="filter-set">
+                        @foreach (var platform in Model.FilterSelectionDataViewModel.Platforms)
+                        {
+                            <div>
+                                <label class="custom-input-container">
+                                    @platform.Name
+                                    <input type="checkbox" class="custom-checkbox" name="@nameof(FilterSelectedOptionsViewModel.Platforms)"
+                                           value="@platform.Id" @(platform.Selected ? "checked" : string.Empty)>
+                                    <span class="check-mark"></span>
+                                </label>
+                            </div>
+                        }
+                    </div>
+                </section>
+                <div class="text-center">
+                    <button class="orange-button form-sender" disabled id="filter-btn" type="submit">@Localizer["FilterButton"]</button>
+                </div>
+            </form>
+        </main>
+    </article>
+</cache>

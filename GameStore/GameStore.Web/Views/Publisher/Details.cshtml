@@ -1,0 +1,80 @@
+﻿@model PublisherViewModel
+
+@{
+    ViewBag.Title = "Publisher";
+}
+
+
+<div class="d-flex">
+    <div class="d-flex justify-content-center">
+        <ul class="">
+            <li >
+                <label class="font-weight-bold">Id:</label>
+                <span class="pl-3">@Model.Id</span>
+            </li>
+            <li>
+                <label class="font-weight-bold">Company name:</label>
+                <span class="pl-3">@Model.CompanyName</span>
+            </li>
+            <li>
+                <label class="font-weight-bold">Home page:</label>
+                <a href="@Model.HomePage" class="btn btn-link">@Model.CompanyName</a>
+            </li>
+            <li>
+                <label class="font-weight-bold">Contact name:</label>
+                <span class="pl-3">@Model.ContactName</span>
+            </li>
+            <li>
+                <label class="font-weight-bold">Contact title:</label>
+                <span class="pl-3">@Model.ContactTitle</span>
+            </li>
+            <li>
+                <label class="font-weight-bold">Address:</label>
+                <span class="pl-3">@Model.Address</span>
+            </li>
+            <li>
+                <label class="font-weight-bold">City:</label>
+                <span class="pl-3">@Model.City</span>
+            </li>
+
+            <li>
+                <label class="font-weight-bold">Region:</label>
+                <span class="pl-3">@Model.Region</span>
+            </li>
+
+            <li>
+                <label class="font-weight-bold">Postal code:</label>
+                <span class="pl-3">@Model.PostalCode</span>
+            </li>
+            <li>
+                <label class="font-weight-bold">Country:</label>
+                <span class="pl-3">@Model.Country</span>
+            </li>
+            <li>
+                <label class="font-weight-bold">Phone:</label>
+                <span class="pl-3">@Model.Phone</span>
+            </li>
+            <li>
+                <label class="font-weight-bold">Fax:</label>
+                <span class="pl-3">@Model.Fax</span>
+            </li>
+            <li>
+                <label class="font-weight-bold">Description:</label>
+                <span class="pl-3">@Model.Description</span>
+            </li>
+        </ul>
+    </div>
+    <div class="d-inline-block">
+        @if (User.IsAllowedPermission(Permissions.UpdatePublisher))
+        {
+            <a class="d-block btn btn-primary" asp-action="UpdateAsync" asp-route-id="@Model.Id">Edit</a>
+        }
+
+        @if (User.IsAllowedPermission(Permissions.DeletePublisher) && Model.CanBeUsed)
+        {
+            <form asp-action="DeleteAsync" asp-route-id="@Model.Id" method="post">
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+        }
+    </div>
+</div>

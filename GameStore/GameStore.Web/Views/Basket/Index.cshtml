@@ -1,0 +1,48 @@
+﻿@model BasketViewModel
+@inject IViewLocalizer Localizer
+
+@{
+    ViewBag.Title = Localizer["Title"];
+}
+
+@section Styles
+{
+    <link rel="stylesheet" href="css/Basket/Index.css">
+}
+
+<article class="cart">
+    <header class="w-60 d-flex ">
+        <h2 class="cart-header">@Localizer["Cart"]</h2>
+        <div class="d-inline-block">
+            <span class="total-items">@Model.TotalItems</span>
+            <span>@Localizer["items"]</span>
+        </div>
+    </header>
+    <main class="order-info">
+        <section class="products-list w-60">
+            @foreach (var orderDetails in Model.OrderDetails)
+            {
+                <partial name="OrderDetailsSummary" model="orderDetails"/>
+            }
+        </section>
+        @if (Model.OrderDetails.Any())
+        {
+            <section class="order-summary">
+                <div class="summary-container">
+                    <div id="total-summary">
+                        <partial name="Total" model="Model.TotalCost"/>
+                    </div>
+                    <a asp-action="SetShipmentOptionsAsync" asp-route-orderId="@Model.OrderId" asp-controller="Order"
+                       class="orange-button checkout">
+                        @Localizer["Checkout"]
+                    </a>
+                </div>
+            </section>
+        }
+    </main>
+</article>
+
+@section Scripts
+{
+    <script src="~/js/Basket/changeQuantity.js"></script>
+}

@@ -1,0 +1,33 @@
+﻿@model IEnumerable<PublisherViewModel>
+@inject IViewLocalizer Localizer
+
+@{
+    ViewBag.Title = Localizer["Title"];
+}
+
+<table class="table">
+    <thead class="thead-light">
+    <tr class="d-table-row">
+        <th scope="col">@Localizer["Id"]</th>
+        <th scope="col">@Localizer["CompanyName"]</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var publisher in Model)
+    {
+        <tr>
+            <td>@publisher.Id</td>
+            <td>@publisher.CompanyName</td>
+            <td>
+                <a class="btn btn-info" asp-action="DetailsAsync" asp-route-companyName="@publisher.CompanyName">@Localizer["DetailsButton"]</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+@if (User.IsAllowedPermission(Permissions.CreatePublisher))
+{
+    <div class="text-center pt-5">
+        <a asp-action="CreateAsync" class="btn btn-lg btn-outline-primary">@Localizer["CreateButton"]</a>
+    </div>
+}

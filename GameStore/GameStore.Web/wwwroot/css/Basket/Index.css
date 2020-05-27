@@ -1,0 +1,192 @@
+﻿.cart > header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart > header span {
+    color: #3E4554;
+    line-height: 22px;
+    font-size: 16px;
+}
+
+.cart-header {
+    display: inline-block;
+    color: #3E4554;
+    font-size: 28px;
+    line-height: 34px;
+}
+
+.cart-header > span {
+    color: #3E4554;
+    line-height: 22px;
+    font-size: 16px;
+}
+
+.order-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-item {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    display: flex;
+    position: relative;
+}
+
+.game-description {
+    margin-left: 2vw;
+}
+
+.game-name {
+    font-size: 16px;
+    color: #3E4554;
+    line-height: 22px;
+}
+
+.platforms {
+    font-size: 14px;
+    line-height: 22px;
+    color: #3E4554;
+}
+
+.size {
+    font-size: 14px;
+    line-height: 16px;
+    color: #727272;
+}
+
+.game-price {
+    margin-top: 12px;
+    font-size: 18px;
+    line-height: 18px;
+    color: #404040;
+}
+
+.button-remove {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.quantity-wrapper {
+    margin-top: 2vh;
+    display: flex;
+    align-items: center;
+}
+
+.quantity-control {
+    display: inline-block;
+    border: 1px solid #D8D8D8;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    line-height: 20px;
+    font-weight: 900;
+}
+
+.quantity-control button {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.increment-button {
+    color: #FF7E2A;
+}
+
+.increment-button:hover {
+    background: #FF7E2A;
+    color: #fff;
+}
+
+.plus-hover {
+    display: none;
+}
+
+.increment-button .plus {
+    display: inline-block;
+}
+
+.increment-button:hover .plus-hover {
+    display: inline-block;
+}
+
+.increment-button:hover .plus {
+    display: none;
+}
+
+.decrement-button {
+    position: relative;
+    color: #727272;
+}
+
+.decrement-button:hover {
+    color: #727272;
+}
+
+.quantity {
+    font-size: 18px;
+    line-height: 22px;
+    color: #3E4554;
+    margin: 0 1.5vw;
+}
+
+.order-summary {
+    width: 25vw;
+}
+
+.summary-container {
+    padding: 3vh 2vw;
+    background-color: #F7F7F7;
+}
+
+.summary-header {
+    color: #3E4554;
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 1.5vh;
+}
+
+.separator-wrapper {
+    margin: 2vh 0;
+}
+
+.summary-point {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    line-height: 26px;
+    color: #3E4554;
+}
+
+.total {
+    line-height: 26px;
+    margin: 2vh 0;
+}
+
+.cost-label {
+    font-size: 18px;
+    color: #3E4554;
+}
+
+.cost {
+    font-size: 18px;
+    color: #FF7E2A;
+}
+
+.checkout {
+    display: inline-block;
+    width: 100%;
+}
+
+.image-container {
+    width: 10vw;
+}
+
+.image-container img{
+    width: 100%;
+}

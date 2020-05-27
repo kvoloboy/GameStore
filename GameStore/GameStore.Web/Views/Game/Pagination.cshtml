@@ -1,0 +1,30 @@
+﻿@model PageOptionsViewModel
+@inject IViewLocalizer Localizer
+
+<nav>
+    <div class="d-flex justify-content-center">
+        @if (Model.TotalPages > 0)
+        {
+            @if (Model.HasPrevious)
+            {
+                <a href="@Model.PreviousPage.Link"
+                   class="form-sender page-number button-transparent page-number btn-previous pagination-control">
+                    <img src="~/img/Game/Details/Arrow Right Pagination.svg" alt="next">
+                </a>
+            }
+            @foreach(var p in Model.Pages)
+            {
+                <a href="@p.Link"
+                   class="form-sender button-transparent page-number @(p.Selected ? "selected" : string.Empty)">
+                    @p.Name
+                </a>
+            }
+            @if (Model.HasNext)
+            {
+                <a href="@Model.NextPage.Link" class="button-transparent page-number pagination-control form-sender">
+                    <img src="~/img/Game/Details/Arrow Right Pagination.svg" alt="next">
+                </a>
+            }
+        }
+    </div>
+</nav>

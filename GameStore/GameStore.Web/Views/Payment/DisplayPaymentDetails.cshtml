@@ -1,0 +1,8 @@
+﻿@model PaymentDetailsViewModel
+@inject IViewLocalizer Localizer
+
+<div>
+    <p><span class="font-weight-bold">@Localizer["UserId"]: </span>@Model.UserId</p>
+    <p><span class="font-weight-bold">@Localizer["OrderId"]: </span>@Model.OrderId</p>
+    <p><span class="font-weight-bold">@Localizer["Total"]: </span>@Model.Total.ToString(FormatTemplates.CurrencyFormat)</p>
+</div>

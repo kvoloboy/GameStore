@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Autofac" Version="5.0.0" />
+      <PackageReference Include="MongoDB.Bson" Version="2.10.2" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\GameStore.BusinessLayer\GameStore.BusinessLayer.csproj" />
+      <ProjectReference Include="..\..\GameStore.Core\GameStore.Core.csproj" />
+      <ProjectReference Include="..\..\GameStore.DataAccess.Mongo\GameStore.DataAccess.Mongo.csproj" />
+      <ProjectReference Include="..\..\GameStore.Infrastucture\GameStore.Infrastucture.csproj" />
+    </ItemGroup>
+</Project>

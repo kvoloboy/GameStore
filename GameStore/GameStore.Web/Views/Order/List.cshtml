@@ -1,0 +1,52 @@
+﻿@model OrdersListViewModel
+@inject IViewLocalizer Localizer
+
+@{
+    ViewBag.Title = Localizer["Title"];
+}
+<div>
+    <form asp-action="ListAsync" method="get">
+        <div class="d-flex justify-content-around align-items-center">
+            <div class="form-group">
+                <label class="font-weight-bold" asp-for="MinDate">@Localizer["SelectMinDate"]</label>
+                <input asp-for="MinDate" class="form-control">
+            </div>
+            <div class="form-group">
+                <label class="font-weight-bold" asp-for="MaxDate">@Localizer["SelectMaxDate"]</label>
+                <input asp-for="MaxDate" class="form-control">
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-secondary">@Localizer["FilterButton"]</button>
+            </div>
+        </div>
+    </form>
+
+</div>
+<table class="table table-bordered table-sm table-striped">
+    <thead>
+    <th>@Localizer["Id"]</th>
+    <th>@Localizer["ProductsQuantity"]</th>
+    <th>@Localizer["Total"]</th>
+    <th>@Localizer["OrderDate"]</th>
+    <th>@Localizer["State"]</th>
+    <th>@Localizer["Shipper"]</th>
+    </thead>
+    <tbody>
+    @foreach (var order in Model.DisplayOrderViewModels)
+    {
+        <tr>
+            <td>@order.Id</td>
+            <td>@order.ProductsQuantity</td>
+            <td>@order.Total.ToString(FormatTemplates.CurrencyFormat)</td>
+            <td>@order.OrderDate.ToShortDateString()</td>
+            <td>@order.State.Value</td>
+            <td>@order.ShipperName</td>
+            <td>
+                <a asp-action="DetailsAsync" asp-route-id="@order.Id" class="btn btn-primary">
+                    @Localizer["ShowInfoButton"]
+                </a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

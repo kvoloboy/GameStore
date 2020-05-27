@@ -1,0 +1,23 @@
+﻿@model GamesCatalogueViewModel
+@inject IViewLocalizer Localizer
+
+<div class="games-catalogue">
+    @if (!Model.Games.Any())
+    {
+        <div class="text-center">
+            <h2>@Localizer["NoItems"]</h2>
+        </div>
+    }
+    else
+    {
+        foreach (var gameViewModel in Model.Games)
+        {
+            <partial model="gameViewModel" name="GameSummary"/>
+        }
+    }
+</div>
+<div class="text-center pt-5">
+    <div class="m-4">
+        @(await Html.PartialAsync("Pagination", Model.PageOptions))
+    </div>
+</div>

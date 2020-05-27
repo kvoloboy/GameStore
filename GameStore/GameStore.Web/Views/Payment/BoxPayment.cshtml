@@ -1,0 +1,14 @@
+﻿@model PaymentDetailsViewModel
+@inject IViewLocalizer Localizer
+
+@{
+    ViewBag.Title = Localizer["Title"];
+}
+
+<partial model="@Model" name="DisplayPaymentDetails"/>
+
+<form asp-action="ConfirmOrderAsync" asp-controller="Order" asp-route-orderId="@Model.OrderId">
+    <div class="text-center">
+        <button type="submit" class="btn btn-lg btn-primary">@Localizer["ConfirmButton"]</button>
+    </div>
+</form>

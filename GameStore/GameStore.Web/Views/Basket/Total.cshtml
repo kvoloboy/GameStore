@@ -1,0 +1,20 @@
+﻿@model decimal
+@inject IViewLocalizer Localizer
+
+<h3 class="summary-header">@Localizer["Order summary"]</h3>
+<hr>
+<div class="separator-wrapper">
+    <div class="summary-point">
+        <span>@Localizer["Subtotal"]</span>
+        <span class="total-price">@Model.ToString(FormatTemplates.CurrencyFormat)</span>
+    </div>
+    <div class="summary-point">
+        <span>@Localizer["Taxes"]</span>
+        <span>@(0.ToString(FormatTemplates.CurrencyFormat))</span>
+    </div>
+</div>
+<hr>
+<div class="summary-point total">
+    <h3 class="cost-label">@Localizer["Total"]</h3>
+    <h3 class="cost total-price">@Model.ToString(FormatTemplates.CurrencyFormat)</h3>
+</div>

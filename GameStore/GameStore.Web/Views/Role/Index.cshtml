@@ -1,0 +1,41 @@
+﻿@model IEnumerable<RoleViewModel>
+@inject IViewLocalizer Localizer
+
+@{
+    ViewBag.Title = Localizer["Title"];
+}
+
+<div class="w-50">
+    <table class="table table-bordered table-striped table-sm">
+        <thead>
+        <th>@Localizer["Name"]</th>
+        <th>@Localizer["Actions"]</th>
+        </thead>
+        @foreach (var role in Model)
+        {
+            <tr>
+                <td>@role.Name</td>
+                <td class="d-flex justify-content-around">
+                    @if (User.IsAllowedPermission(Permissions.UpdateRole))
+                    {
+                        <a class="btn btn-secondary" asp-action="UpdateAsync" asp-route-id="@role.Id">@Localizer["UpdateButton"]</a>
+                    }
+                    @if (User.IsAllowedPermission(Permissions.DeleteRole) && role.CanDelete)
+                    {
+                        <form asp-action="DeleteAsync" asp-route-id="@role.Id">
+                            <button class="btn btn-danger">
+                                @Localizer["DeleteButton"]
+                            </button>
+                        </form>
+                    }
+                </td>
+            </tr>
+        }
+    </table>
+    @if (User.IsAllowedPermission(Permissions.CreateRole))
+    {
+        <div class="text-center">
+            <a class="btn btn-primary" asp-action="CreateAsync">@Localizer["CreateButton"]</a>
+        </div>
+    }
+</div>

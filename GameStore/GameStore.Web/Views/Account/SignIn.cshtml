@@ -1,0 +1,22 @@
+﻿@model SignInViewModel
+@inject IViewLocalizer Localizer
+@{
+    ViewBag.Title = Localizer["Title"];
+}
+
+<form asp-action="SignInAsync">
+    <div asp-validation-summary="ModelOnly"></div>
+    <div class="form-group">
+        <label asp-for="Email">@Localizer["Email"]</label>
+        <input asp-for="Email" class="form-control">
+        <span asp-validation-for="Email"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Password">@Localizer["Password"]</label>
+        <input asp-for="Password" class="form-control">
+        <span asp-validation-for="Password"></span>
+    </div>
+    <div class="text-center">
+        <button type="submit" class="btn btn-primary">@Localizer["SignInButton"]</button>
+    </div>
+</form>

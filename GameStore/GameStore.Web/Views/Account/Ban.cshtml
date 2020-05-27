@@ -1,0 +1,23 @@
+﻿@model BanViewModel
+@inject IViewLocalizer Localizer
+@{
+    ViewBag.Title = Localizer["Title"];
+}
+
+<h2>@Localizer["BanUser"] @Model.UserId</h2>
+
+<form asp-action="BanAsync">
+    <input type="hidden" asp-for="UserId">
+    <div class="form-group">
+        <label asp-for="BanTerm">@Localizer["BanTerm"]</label>
+        <select class="form-control" asp-for="BanTerm">
+            @foreach (var term in Model.Terms)
+            {
+                <option value="@term.Value">@term.Text</option>
+            }
+        </select>
+    </div>
+    <div class="text-center">
+        <button type="submit" class="btn btn-lg btn-danger">@Localizer["BanButton"]</button>
+    </div>
+</form>

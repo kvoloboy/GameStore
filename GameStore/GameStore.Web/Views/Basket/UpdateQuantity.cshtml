@@ -1,0 +1,23 @@
+﻿@model ChangeDetailsQuantityViewModel
+@inject IViewLocalizer Localizer
+
+@{
+    ViewBag.Title = Localizer["Title"];
+}
+
+<form asp-action="UpdateQuantityAsync">
+    <input type="hidden" asp-for="Id">
+    <div asp-validation-summary="ModelOnly"></div>
+    <div class="form-group">
+        <p class="text-center"><span class="font-weight-bold">@Localizer["GameName"]: </span>@Model.GameName</p>
+        <label asp-for="Quantity">@Localizer["Quantity"]</label>
+        <span class="font-italic">@Localizer["MaxQuantity"]: @Model.GameUnitsInStock</span>
+        <input asp-for="Quantity" class="form-control">
+        <span asp-validation-for="Quantity"></span>
+    </div>
+    <div class="text-center">
+        <button type="submit" asp-action="UpdateQuantityAsync" class="btn btn-success">
+            @Localizer["UpdateButton"]
+        </button>
+    </div>
+</form>

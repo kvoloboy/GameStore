@@ -1,0 +1,39 @@
+﻿@model ImageIndexViewModel
+@inject IViewLocalizer Localizer
+
+@{
+    ViewBag.Title = Localizer["Title"];
+}
+
+@section Styles
+{
+    <link rel="stylesheet" href="~/css/Game/image.css">
+}
+
+<div class="d-flex flex-wrap">
+    @foreach (var image in Model.Images)
+    {
+        <div class="game-image">
+            <div>
+                <img src="@image.Content" alt="game image"/>
+            </div>
+            <div class="d-flex">
+                <form asp-action="DeleteAsync" asp-route-id="@image.Id" method="post" class="ml-3">
+                    <button type="submit" class="button-transparent application-link">
+                        Delete
+                    </button>
+                </form>
+            </div>
+        </div>
+    }
+</div>
+<div class="w-50 mt-4">
+    <form enctype="multipart/form-data" method="post" asp-action="CreateAsync">
+        <input type="hidden" name="@nameof(GameImageViewModel.GameKey)" value="@Model.GameKey">
+        <div class="form-group">
+            <label for="image">@Localizer["LoadImage"]</label>
+            <input class="form-control-file" required="required" accept="image/*" type="file" name="image" id="image">
+        </div>
+        <button type="submit" class="btn btn-outline-secondary">Submit</button>
+    </form>
+</div>

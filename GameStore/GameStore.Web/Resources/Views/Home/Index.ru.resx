@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+            
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="Roles" xml:space="preserve">
+        <value>Роли</value>
+    </data>
+    <data name="Users" xml:space="preserve">
+        <value>Пользователи</value>
+    </data>
+    <data name="History" xml:space="preserve">
+        <value>История</value>
+    </data>
+    <data name="Orders" xml:space="preserve">
+        <value>Заказы</value>
+    </data>
+    <data name="Publishers" xml:space="preserve">
+        <value>Производители</value>
+    </data>
+    <data name="Genres" xml:space="preserve">
+        <value>Жанры</value>
+    </data>
+    <data name="Platforms" xml:space="preserve">
+        <value>Платформы</value>
+    </data>
+    <data name="Games" xml:space="preserve">
+        <value>Игры</value>
+    </data>
+    <data name="Title" xml:space="preserve">
+        <value>Домашняя страница</value>
+        <comment>Title</comment>
+    </data>
+    <data name="Main Header" xml:space="preserve">
+        <value>Вы знаете кто такой Джон Рембо?</value>
+    </data>
+    <data name="First issue" xml:space="preserve">
+        <value>
+            Члены удобства Микроволновые недороги, легко и пропаганды в выходные дни. На самом деле, концы Pellentesque Фелис Vivamus volutpat accumsan. Нет долина не игроки транспортных средств. Глютен.
+        </value>
+    </data>
+    <data name="Second issue" xml:space="preserve">
+        <value>
+            На самом деле, концы Pellentesque Фелис Vivamus volutpat accumsan. Нет долина не игроки транспортных средств. Глютен.
+        </value>
+    </data>
+    <data name="Third issue" xml:space="preserve">
+        <value>
+            Микроволновые члены удобства дуги по уик-энда. Нет долина не игроки транспортных средств. Глютен. Представьте, ни tincidunt Пурус. До либо ворот.
+        </value>
+    </data>
+    <data name="Main Text" xml:space="preserve">
+        <value>
+            Донец Урна Sapien, кэрри и не condimentum идентификатор, элемент, в котором. Чат с бананами некрасивых, стрельба из лука франшизы салат. А кто там, и сидеть Амет mauris Eget neque euismod Fringilla. Члены удобства Микроволновые недороги, легко и пропаганды в выходные дни. На самом деле, концы Pellentesque Фелис Vivamus volutpat accumsan. Нет долина не игроки транспортных средств. Глютен. Живой футбол в то время, масса разработчиков танкеров.
+        </value>
+    </data>
+    <data name="Learn More" xml:space="preserve">
+        <value>Узнать больше</value>
+    </data>
+    <data name="We Knocked Em’ll" xml:space="preserve">
+        <value>Мы сбили их</value>
+    </data>
+</root>

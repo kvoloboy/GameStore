@@ -1,0 +1,22 @@
+﻿@model RatingViewModel
+
+<div class="d-flex align-items-center">
+    <div class="rating">
+        @for (var i = RatingViewModel.MaxStarsValue; i >= 1; i--)
+        {
+            <a asp-action="SetRatingAsync" asp-route-gameId="@Model.GameId" asp-route-value="@i" class="star-container @($"star-{i}")">
+                @if (i <= Model.StarsCount)
+                {
+                    <img class="star" src="~/img/Game/Details/Star.svg" alt="positive-star"/>
+                }
+                else
+                {
+                    <img class="star star-grey" src="~/img/Game/Details/Star grey.svg" alt="negative-star"/>
+                    <img class="star star-hidden" src="~/img/Game/Details/Star.svg" alt="positive-star"/>
+                }
+            </a>
+        }
+    </div>
+
+    <span class="rating-value">@Model.Rating.ToString("F1")</span>
+</div>

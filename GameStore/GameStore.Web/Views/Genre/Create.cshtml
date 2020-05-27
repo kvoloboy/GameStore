@@ -1,0 +1,27 @@
+﻿@model GenreViewModel
+@inject IViewLocalizer Localizer
+
+@{
+    ViewBag.Title = Localizer["Title"];
+}
+
+<form asp-action="CreateAsync" method="post">
+    <div asp-validation-summary="ModelOnly"></div>
+    <div class="form-group">
+        <label asp-for="ModifyGenreViewModel.Name">@Localizer["Name"]</label>
+        <input asp-for="ModifyGenreViewModel.Name" class="form-control">
+        <span asp-validation-for="ModifyGenreViewModel.Name"></span>
+    </div>
+    <div class="form-group">
+        <label>@Localizer["SelectParent"]</label>
+        <select asp-for="ModifyGenreViewModel.ParentId" 
+                asp-items="@(new SelectList(Model.Parents, "Id", "Name"))" class="form-control">
+            <option value="@string.Empty">@Localizer["None"]</option>
+        </select>
+    </div>
+    <div class="text-center">
+        <button type="submit" class="btn btn-lg btn-outline-primary">
+            @Localizer["CreateButton"]
+        </button>
+    </div>
+</form>

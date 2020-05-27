@@ -1,0 +1,78 @@
+﻿@model OrderViewModel
+@inject IViewLocalizer Localizer
+
+@{
+    ViewBag.Title = Localizer["Title"];
+}
+
+@if (Model.Basket.OrderDetails.Any())
+{
+    <div class="text-center">
+        <h2>@Localizer["Your order"]</h2>
+        <table class="table table-sm table-striped table-bordered mt-4">
+            <thead>
+            <th>@Localizer["Game"]</th>
+            <th>@Localizer["Quantity"]</th>
+            <th>@Localizer["Price"]</th>
+            <th>@Localizer["Discount"]</th>
+            </thead>
+            <tbody>
+            @foreach (var orderDetails in Model.Basket.OrderDetails)
+            {
+                <tr>
+                    <td>@orderDetails.GameName</td>
+                    <td>@orderDetails.Quantity</td>
+                    <td>@orderDetails.Price.ToString(FormatTemplates.CurrencyFormat)</td>
+                    <td>@orderDetails.Discount.ToString() %</td>
+                </tr>
+            }
+            </tbody>
+            <tfoot>
+            <td class="text-right" colspan="3">
+                <div>
+                    <span class="font-weight-bold">@Localizer["TotalItems"]: </span> @Model.Basket.TotalItems
+                </div>
+                <div>
+                    <span class="font-weight-bold">@Localizer["TotalCost"]:</span>
+                    @Model.Basket.TotalCost.ToString(FormatTemplates.CurrencyFormat)
+                </div>
+            </td>
+            </tfoot>
+        </table>
+    </div>
+    <div class="mt-4">
+        <div class="d-flex flex-column justify-content-end">
+            <h3>@Localizer["Payments"]:</h3>
+            <table class="table table-bordered">
+                <thead>
+                <th>@Localizer["Picture"]</th>
+                <th>@Localizer["Description"]</th>
+                </thead>
+                <tbody>
+                @foreach (var payment in Model.Payments)
+                {
+                    <tr>
+                        <td>
+                            <img width="100px" height="75px" src="@payment.ImagePath" alt="@payment.Title">
+                        </td>
+                        <td>
+                            <h6>@payment.Title</h6>
+                            <div>@payment.Description</div>
+                        </td>
+                        <td class="text-center mt-4">
+                            <a asp-action="CheckoutAsync" asp-controller="Payment"
+                               asp-route-payment="@payment.Title" class="btn btn-lg btn-success">
+                                @Localizer["PayButton"]
+                            </a>
+                        </td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    </div>
+}
+else
+{
+    <h2 class="text-center">@Localizer["EmptyOrderMessage"]</h2>
+}
