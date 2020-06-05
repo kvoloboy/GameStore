@@ -51,7 +51,7 @@
                aria-controls="english-localization" aria-selected="true">
                 @Localizer["EnglishCulture"]
             </a>
-            <a class="nav-item nav-link" data-toggle="tab" href="#russian-localization" role="tab" 
+            <a class="nav-item nav-link" data-toggle="tab" href="#russian-localization" role="tab"
                aria-controls="russian-localization" aria-selected="false">
                 @Localizer["RussianCulture"]
             </a>
@@ -92,17 +92,17 @@
     </div>
 
 
-    <div class="d-flex justify-content-around">
+@*     <div class="d-flex justify-content-around"> *@
+@*         <div class="form-group"> *@
+@*             <label class="font-weight-bold">@Localizer["SelectGenres"]</label> *@
+@*             @Html.CheckBoxList( *@
+@*                 Model.GameSelectionDataViewModel.Genres, *@
+@*                 Model.ModifyGameViewModel.SelectedGenres, *@
+@*                 "ModifyGameViewModel.SelectedGenres", *@
+@*                 "genres") *@
+@*         </div> *@
         <div class="form-group">
-            <label class="font-weight-bold">@Localizer["SelectGenres"]</label>
-            @Html.CheckBoxList(
-                Model.GameSelectionDataViewModel.Genres,
-                Model.ModifyGameViewModel.SelectedGenres,
-                "ModifyGameViewModel.SelectedGenres",
-                "genres")
-        </div>
-        <div class="form-group">
-            <label class="font-weight-bold">@Localizer["SelectPlatforms"]</label>
+            <label class="font-weight-bold">@Localizer["Категории"]</label>
             @Html.CheckBoxList(
                 Model.GameSelectionDataViewModel.Platforms,
                 Model.ModifyGameViewModel.SelectedPlatforms,

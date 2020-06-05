@@ -7,7 +7,7 @@
             <img src="@Model.Images.First().Content" alt="game-image">
         </div>
         <h3 class="game-header">@Model.Name</h3>
-        <h4 class="platform">@string.Join(", ", Model.Platforms)</h4>
+        @* <h4 class="platform">@string.Join(", ", Model.Platforms)</h4> *@
         <h4 class="game-price">@Model.Price.ToString(FormatTemplates.CurrencyFormat)</h4>
     </a>
 </div>

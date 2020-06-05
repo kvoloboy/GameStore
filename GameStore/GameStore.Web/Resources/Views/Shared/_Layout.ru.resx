@@ -3,7 +3,7 @@
 <root>
     <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
         <xsd:element name="root" msdata:IsDataSet="true">
-            
+
         </xsd:element>
     </xsd:schema>
     <resheader name="resmimetype">
@@ -105,7 +105,7 @@
         <value>Из блога</value>
     </data>
     <data name="Post text" xml:space="preserve">
-        <value>Микроволновые члены удобства дуги по уик-энда. Нет долины.</value>
+        <value>Скидки на поездки в Африку</value>
     </data>
     <data name="Learn more" xml:space="preserve">
         <value>Подробнее</value>

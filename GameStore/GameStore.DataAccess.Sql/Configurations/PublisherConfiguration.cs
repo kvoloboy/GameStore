@@ -25,9 +25,9 @@ namespace GameStore.DataAccess.Sql.Configurations
 
             builder.HasData
             (
-                new Publisher {Id = "101", CompanyName = "Microsoft", HomePage = "https://www.microsoft.com/"},
-                new Publisher {Id = "102", CompanyName = "Google", HomePage = "https://www.google.com/"},
-                new Publisher {Id = "103", CompanyName = "Amazon", HomePage = "https://www.amazon.com/"}
+                new Publisher {Id = "101", CompanyName = "Воздушный Андрей", HomePage = "https://www.microsoft.com/"},
+                new Publisher {Id = "102", CompanyName = "Пахучий Антон", HomePage = "https://www.google.com/"},
+                new Publisher {Id = "103", CompanyName = "Помытый Филип", HomePage = "https://www.amazon.com/"}
             );
         }
     }

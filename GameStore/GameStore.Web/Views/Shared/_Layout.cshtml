@@ -21,9 +21,9 @@
                 @Localizer["logo"]
             </a>
             <nav>
-                <a class="menu-link" asp-action="GetAllAsync" asp-controller="Game">@Localizer["Games"]</a>
-                <a class="menu-link" asp-action="GetAllAsync" asp-controller="Genre">@Localizer["Genres"]</a>
-                <a class="menu-link" asp-action="GetAllAsync" asp-controller="Publisher">@Localizer["Publishers"]</a>               
+                <a class="menu-link" asp-action="GetAllAsync" asp-controller="Game">@Localizer["Туры"]</a>
+                <a class="menu-link" asp-action="GetAllAsync" asp-controller="Platform">@Localizer["Категории"]</a>
+                <a class="menu-link" asp-action="GetAllAsync" asp-controller="Publisher">@Localizer["Агентства"]</a>
 
                 @if (User.IsAllowedPermission(Permissions.ReadPersonalOrders))
                 {
@@ -108,7 +108,7 @@
         <div class="news-section-container">
             <h2>@Localizer["Twitter Updates"]</h2>
             <div class="post">
-                <p class="post-text">Devil May Cry 5</p>
+                <p class="post-text">Горячий тур!</p>
                 <div>
                     <a href="#" class="application-link">
                         http://goo.gl/eJVm
@@ -118,7 +118,7 @@
             </div>
             <hr>
             <div class="post">
-                <p class="post-text">Dead or Alive 6 Special Edition</p>
+                <p class="post-text">Горячий тур!</p>
                 <div>
                     <a href="#" class="application-link">
                         http://goo.gl/eJVm
@@ -128,7 +128,7 @@
             </div>
             <hr>
             <div class="post">
-                <p class="post-text">Resident Evil 2 Deluxe Edition</p>
+                <p class="post-text">Горячий тур!</p>
                 <div>
                     <a href="#" class="application-link">
                         http://goo.gl/eJVm
@@ -190,9 +190,9 @@
         <div class="footer-menu">
             <div class="footer-navigation">
                 <h3 class="footer-heading">@Localizer["Site links"]</h3>
-                <a class="footer-link" asp-action="GetAllAsync" asp-controller="Game">@Localizer["Games"]</a>
-                <a class="footer-link" asp-action="GetAllAsync" asp-controller="Genre">@Localizer["Genres"]</a>
-                <a class="footer-link" asp-action="GetAllAsync" asp-controller="Publisher">@Localizer["Publishers"]</a>
+                <a class="footer-link" asp-action="GetAllAsync" asp-controller="Game">@Localizer["Туры"]</a>
+                <a class="footer-link" asp-action="GetAllAsync" asp-controller="Platform">@Localizer["Категории"]</a>
+                <a class="footer-link" asp-action="GetAllAsync" asp-controller="Publisher">@Localizer["Агентства"]</a>
                 <a class="footer-link" asp-action="GetForUserAsync" asp-controller="Order">@Localizer["Orders"]</a>
                 <a class="footer-link" asp-action="IndexAsync" asp-controller="Basket">@Localizer["My Bucket"]</a>
             </div>

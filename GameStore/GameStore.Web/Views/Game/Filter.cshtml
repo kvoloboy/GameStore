@@ -90,7 +90,7 @@
                     </div>
                 </section>
                 <section class="filter-section">
-                    <h3 class="filter-name">@Localizer["Publisher"]</h3>
+                    <h3 class="filter-name">@Localizer["Агентство"]</h3>
                     <hr>
                     <div class="filter-set">
                         @foreach (var publisher in Model.FilterSelectionDataViewModel.Publishers)
@@ -107,7 +107,7 @@
                     </div>
                 </section>
                 <section class="filter-section">
-                    <h3 class="filter-name">@Localizer["Release Date"]</h3>
+                    <h3 class="filter-name">@Localizer["Дата добавления"]</h3>
                     <hr>
                     <div class="filter-set">
                         @foreach (var creationDate in Model.FilterSelectionDataViewModel.PublishingDates)
@@ -124,40 +124,40 @@
                         }
                     </div>
                 </section>
-                <section class="filter-section">
-                    <h3 class="filter-name">@Localizer["Genre"]</h3>
-                    <hr>
-                    <div class="filter-set">
-                        @foreach (var genre in Model.FilterSelectionDataViewModel.Genres)
-                        {
-                            <div>
-                                <label class="custom-input-container">
-                                    @genre.Name
-                                    <input type="checkbox" class="custom-checkbox" name="@nameof(FilterSelectedOptionsViewModel.Genres)"
-                                           value="@genre.Id" @(genre.Selected ? "checked" : string.Empty)>
-                                    <span class="check-mark"></span>
-                                </label>
-                            </div>
-                        }
-                    </div>
-                </section>
-                <section class="filter-section">
-                    <h3 class="filter-name">@Localizer["Platform"]</h3>
-                    <hr>
-                    <div class="filter-set">
-                        @foreach (var platform in Model.FilterSelectionDataViewModel.Platforms)
-                        {
-                            <div>
-                                <label class="custom-input-container">
-                                    @platform.Name
-                                    <input type="checkbox" class="custom-checkbox" name="@nameof(FilterSelectedOptionsViewModel.Platforms)"
-                                           value="@platform.Id" @(platform.Selected ? "checked" : string.Empty)>
-                                    <span class="check-mark"></span>
-                                </label>
-                            </div>
-                        }
-                    </div>
-                </section>
+@*                 <section class="filter-section"> *@
+@*                     <h3 class="filter-name">@Localizer["Категории"]</h3> *@
+@*                     <hr> *@
+@*                     <div class="filter-set"> *@
+@*                         @foreach (var genre in Model.FilterSelectionDataViewModel.Genres) *@
+@*                         { *@
+@*                             <div> *@
+@*                                 <label class="custom-input-container"> *@
+@*                                     @genre.Name *@
+@*                                     <input type="checkbox" class="custom-checkbox" name="@nameof(FilterSelectedOptionsViewModel.Genres)" *@
+@*                                            value="@genre.Id" @(genre.Selected ? "checked" : string.Empty)> *@
+@*                                     <span class="check-mark"></span> *@
+@*                                 </label> *@
+@*                             </div> *@
+@*                         } *@
+@*                     </div> *@
+@*                 </section> *@
+                 <section class="filter-section">
+                     <h3 class="filter-name">@Localizer["Категория"]</h3>
+                     <hr>
+                     <div class="filter-set">
+                         @foreach (var platform in Model.FilterSelectionDataViewModel.Platforms)
+                         {
+                             <div>
+                                 <label class="custom-input-container">
+                                     @platform.Name
+                                     <input type="checkbox" class="custom-checkbox" name="@nameof(FilterSelectedOptionsViewModel.Platforms)"
+                                            value="@platform.Id" @(platform.Selected ? "checked" : string.Empty)>
+                                     <span class="check-mark"></span>
+                                 </label>
+                             </div>
+                         }
+                     </div>
+                 </section>
                 <div class="text-center">
                     <button class="orange-button form-sender" disabled id="filter-btn" type="submit">@Localizer["FilterButton"]</button>
                 </div>

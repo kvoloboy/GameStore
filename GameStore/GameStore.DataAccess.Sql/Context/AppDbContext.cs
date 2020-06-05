@@ -10,7 +10,7 @@ namespace GameStore.DataAccess.Sql.Context
     {
         public AppDbContext(DbContextOptions options) : base(options)
         {
-            Database.Migrate();
+            Database.EnsureCreated();
         }
 
         public DbSet<Comment> Comments { get; set; }

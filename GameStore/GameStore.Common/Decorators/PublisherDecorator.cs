@@ -121,12 +121,12 @@ namespace GameStore.Common.Decorators
             var sqlPublishers = await _sqlPublisherRepository.FindAllAsync();
             SetupCanBeUsedOption(sqlPublishers, true);
 
-            var mongoPublishers = (await _mongoPublisherRepository.FindAllAsync()).ToArray();
-            var mongoDomainPublishers = await MapToDomainModelsAsync(mongoPublishers);
+            // var mongoPublishers = (await _mongoPublisherRepository.FindAllAsync()).ToArray();
+            // var mongoDomainPublishers = await MapToDomainModelsAsync(mongoPublishers);
+            //
+            // var commonPublishers = sqlPublishers.Concat(mongoDomainPublishers);
 
-            var commonPublishers = sqlPublishers.Concat(mongoDomainPublishers);
-
-            return commonPublishers;
+            return sqlPublishers;
         }
 
         public async Task<bool> IsExistByIdAsync(string id)

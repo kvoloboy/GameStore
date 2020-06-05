@@ -13,10 +13,10 @@
 <article class="main-page">
     <header class="d-flex align-items-center">
         <div class="games-wrapper d-flex justify-content-between">
-            <h1 class="games-header">@Localizer["Games"]</h1>
+            <h1 class="games-header">@Localizer["Туры"]</h1>
             <div class="search-wrapper">
                 <input type="text" name="@nameof(FilterSelectedOptionsViewModel.Name)"
-                       form="filter" placeholder="@Localizer["Search for Game"]"
+                       form="filter" placeholder="@Localizer["Поиск тура"]"
                        class="search" value="@Model.Filter.FilterSelectedOptionsViewModel.Name">
                 <button type="submit" form="filter" asp-action="GetAllAsync" class="search-button button-transparent form-sender">
                     <img src="img/Game/Index/search.png" class="search-img" alt="search">

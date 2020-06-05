@@ -21,10 +21,10 @@ namespace GameStore.DataAccess.Sql.Configurations
 
             builder.HasData
             (
-                new Platform {Id = "1", Name = "Console"},
-                new Platform {Id = "2", Name = "Desktop"},
-                new Platform {Id = "3", Name = "Mobile"},
-                new Platform {Id = "4", Name = "Browser"}
+                new Platform {Id = "1", Name = "Люкс"},
+                new Platform {Id = "2", Name = "Среднячёк"},
+                new Platform {Id = "3", Name = "Бомж стайл"},
+                new Platform {Id = "4", Name = "Президентский"}
             );
         }
     }

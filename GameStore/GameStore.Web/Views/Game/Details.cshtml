@@ -83,24 +83,24 @@
                 </div>
                 <div class="details d-flex">
                     <div class="platforms">
-                        <h3 class="details-header">@Localizer["Playable on"]</h3>
+                        <h3 class="details-header">@Localizer["Категории"]</h3>
                         <span class="detail-value">@string.Join(", ", Model.Platforms)</span>
                     </div>
-                    <div>
-                        <h3 class="details-header">@Localizer["File size"]</h3>
-                        <span class="detail-value">@Localizer["Fake"]</span>
-                    </div>
+                    @* <div> *@
+                    @*     <h3 class="details-header">@Localizer["File size"]</h3> *@
+                    @*     <span class="detail-value">@Localizer["Fake"]</span> *@
+                    @* </div> *@
                 </div>
 
-                <div class="details upper-margin">
-                    <h3 class="details-header">@Localizer["Genres"]</h3>
-                    <div>
-                        @foreach (var genre in Model.Genres)
-                        {
-                            <span class="genre detail-value">@genre</span>
-                        }
-                    </div>
-                </div>
+@*                 <div class="details upper-margin"> *@
+@*                     <h3 class="details-header">@Localizer["Genres"]</h3> *@
+@*                     <div> *@
+@*                         @foreach (var genre in Model.Genres) *@
+@*                         { *@
+@*                             <span class="genre detail-value">@genre</span> *@
+@*                         } *@
+@*                     </div> *@
+@*                 </div> *@
                 <div class="upper-margin bottom-margin d-flex">
                     <form asp-action="AddAsync" asp-controller="Basket" asp-route-key="@Model.Key">
                         <button type="submit" id="cart-btn" class="orange-button">
@@ -130,28 +130,32 @@
                 <div class="upper-margin">
                     <h2 class="details-header-xl">@Localizer["What You Get"]</h2>
                     <p class="details-text">
-                        @Localizer["Details text"]
+                        @* @Localizer["Details text"] *@
                     </p>
                     <ul class="issues-list get-list">
                         <li>
-                            @Localizer["First issue"]
+                            Бесплатные завтраки
+                            @* @Localizer["First issue"] *@
                         </li>
                         <li>
-                            @Localizer["Second issue"]
+                            Абонемент в спорт зал
+                            @* @Localizer["Second issue"] *@
                         </li>
                         <li>
-                            @Localizer["Third issue"]
+                            Красивых женщин и мужчин
+                            @* @Localizer["Third issue"] *@
                         </li>
-                        <li>
-                            @Localizer["Forth issue"]
-                        </li>
+                        @* <li> *@
+                            @* @Localizer["Forth issue"] *@
+                        @* </li> *@
                     </ul>
                     <p class="details-text">
-                        @Localizer["Bundle text"]
+                        @* @Localizer["Bundle text"] *@
+                        Ждём вас с нетерпением
                     </p>
                 </div>
                 <div class="upper-margin bottom-margin">
-                    <h2 class="details-header-xl">@Localizer["Game Description"]</h2>
+                    <h2 class="details-header-xl">@Localizer["Описание тура"]</h2>
                     <p class="details-text">@Model.Description</p>
                 </div>
             </main>
